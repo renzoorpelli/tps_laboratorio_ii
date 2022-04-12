@@ -65,9 +65,9 @@ namespace MiCalculadora
         /// </summary>
         public void Limpiar()
         {
-            txtNumero1.Text = String.Empty;
-            txtNumero2.Text = String.Empty;
-            cmbOperador.SelectedItem = null;
+            txtNumero1.Text = "";
+            txtNumero2.Text = "";
+            cmbOperador.SelectedIndex = 0;
             //lstOperaciones.Items.Clear();
             lblResultado.Text = "0";
         }
@@ -111,7 +111,11 @@ namespace MiCalculadora
             else
             {
                 lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-                lstOperaciones.Items.Add($"{txtNumero1.Text}{cmbOperador.Text}{txtNumero2.Text} = {lblResultado.Text}");
+                if (cmbOperador.SelectedIndex == 0)
+                {
+                    cmbOperador.Text = "+";
+                }
+                lstOperaciones.Items.Add($"{txtNumero1.Text} {cmbOperador.Text} {txtNumero2.Text} = {lblResultado.Text}");
                 btnConvertirABinario.Enabled = true;
                 btnConvertirADecimal.Enabled = true;//false
             }
