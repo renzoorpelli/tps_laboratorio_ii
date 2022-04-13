@@ -10,3 +10,15 @@ C:\Users\renzo\Documents\programacion\Trabajos Practicos\Nueva carpeta\Entidades
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\Nueva carpeta\Entidades\Entidades\obj\Debug\net5.0\refint\Entidades.dll
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\Nueva carpeta\Entidades\Entidades\obj\Debug\net5.0\Entidades.pdb
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\Nueva carpeta\Entidades\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\bin\Debug\net5.0\Entidades.deps.json
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\bin\Debug\net5.0\Entidades.dll
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\bin\Debug\net5.0\Entidades.pdb
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.dll
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\refint\Entidades.dll
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\renzo\Desktop\tps_laboratorio_ii\TP[1]\Entidades\obj\Debug\net5.0\ref\Entidades.dll

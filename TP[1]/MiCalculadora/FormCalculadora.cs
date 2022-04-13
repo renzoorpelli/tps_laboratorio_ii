@@ -30,7 +30,9 @@ namespace MiCalculadora
             cmbOperador.Items.Add("/");
             cmbOperador.Items.Add("*");
             cmbOperador.SelectedIndex = 0;
-            
+            btnConvertirABinario.Enabled = false;
+            btnConvertirADecimal.Enabled = false;
+
 
         }
         /// <summary>
@@ -113,12 +115,13 @@ namespace MiCalculadora
                 lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
                 if (cmbOperador.SelectedIndex == 0)
                 {
-                    cmbOperador.Text = "+";
+                    cmbOperador.SelectedIndex = 1;
                 }
                 lstOperaciones.Items.Add($"{txtNumero1.Text} {cmbOperador.Text} {txtNumero2.Text} = {lblResultado.Text}");
-                btnConvertirABinario.Enabled = true;
-                btnConvertirADecimal.Enabled = true;//false
+                
             }
+            btnConvertirABinario.Enabled = true;
+            btnConvertirADecimal.Enabled = true;//false
         }
         /// <summary>
         /// esta función se encarga de convertir a binario el numero decimal del resultado de la operación realizada

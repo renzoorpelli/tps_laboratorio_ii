@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\MiCalculadora\\MiCalculadora.csproj": {}
+    "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\MiCalculadora\\MiCalculadora.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\renzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\MiCalculadora\\MiCalculadora.csproj": {
+    "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\MiCalculadora\\MiCalculadora.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\MiCalculadora\\MiCalculadora.csproj",
+        "projectUniqueName": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\MiCalculadora\\MiCalculadora.csproj",
         "projectName": "MiCalculadora",
-        "projectPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\MiCalculadora\\MiCalculadora.csproj",
+        "projectPath": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\MiCalculadora\\MiCalculadora.csproj",
         "packagesPath": "C:\\Users\\renzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\MiCalculadora\\obj\\",
+        "outputPath": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\MiCalculadora\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\Nueva carpeta\\Entidades\\Entidades\\Entidades.csproj"
+              "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\renzo\\Desktop\\modificando tp\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj"
               }
             }
           }
