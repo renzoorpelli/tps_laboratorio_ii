@@ -16,28 +16,28 @@ namespace Entidades
         /// <returns>retorna numero decimal convertido a string </returns>
         public string BinarioDecimal(string numero)
         {
-            if(!EsBinario(numero))
+            char[] charArray = numero.ToCharArray();
+            Array.Reverse(charArray); 
+            int sumador = 0; 
+            string resultado;
+
+            if (!EsBinario(numero))
             {
-                return "Valor inválidos";
+                resultado =  "Valor inválido";
             }
             else
             {
-                int numeroAEntero = int.Parse(numero);
-                int numeroAbsoluto = Math.Abs(numeroAEntero);
-                int digitos;
-                int numeroDecimal = 0;
-                int secuencia = 1;
-                while (numeroAbsoluto > 0)
+                for (int i = 0; i < charArray.Length; i++) 
                 {
-                    digitos = numeroAbsoluto % 10;
-                    numeroAbsoluto /= 10;
-                    numeroDecimal = numeroDecimal + (digitos * secuencia);
-                    secuencia *= 2;
+                    if(charArray[i] == '1') 
+                    {
+                        sumador += (int)Math.Pow(2, i);
+                    }
                 }
-
-                return numeroDecimal.ToString();
-
+                resultado = sumador.ToString();
+                
             }
+            return resultado;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Entidades
         /// <returns>devolvera true si la operación fue exitosa o false si surgió un problema</returns>
         public bool EsBinario (string binario)
         {
-            for (int i = 0; i < binario.Length - 1; i++)
+            for (int i = 0; i < binario.Length; i++)
             {
                 if(binario[i] != '0' && binario[i] != '1')
                 {

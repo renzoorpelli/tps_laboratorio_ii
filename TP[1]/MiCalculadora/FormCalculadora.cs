@@ -30,7 +30,9 @@ namespace MiCalculadora
             cmbOperador.Items.Add("/");
             cmbOperador.Items.Add("*");
             cmbOperador.SelectedIndex = 0;
-            
+            btnConvertirABinario.Enabled = false;
+            btnConvertirADecimal.Enabled = false;
+
 
         }
         /// <summary>
@@ -68,7 +70,6 @@ namespace MiCalculadora
             txtNumero1.Text = "";
             txtNumero2.Text = "";
             cmbOperador.SelectedIndex = 0;
-            //lstOperaciones.Items.Clear();
             lblResultado.Text = "0";
         }
         /// <summary>
@@ -107,17 +108,34 @@ namespace MiCalculadora
             if (string.IsNullOrEmpty(txtNumero1.Text) || string.IsNullOrEmpty(txtNumero2.Text))
             {
                 MessageBox.Show("Por favor ingrese un numero", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnConvertirABinario.Enabled = false;
+                btnConvertirADecimal.Enabled = false;
             }
             else
             {
-                lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-                if (cmbOperador.SelectedIndex == 0)
+                if(!double.TryParse(txtNumero1.Text, out double resultado) || !double.TryParse(txtNumero2.Text, out resultado) || Double.IsNaN(resultado))
                 {
-                    cmbOperador.Text = "+";
+                    MessageBox.Show("Por favor ingrese un numero valido", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);   
                 }
-                lstOperaciones.Items.Add($"{txtNumero1.Text} {cmbOperador.Text} {txtNumero2.Text} = {lblResultado.Text}");
-                btnConvertirABinario.Enabled = true;
-                btnConvertirADecimal.Enabled = true;//false
+                else
+                {
+                    if (cmbOperador.SelectedIndex == 0)
+                    {
+                        cmbOperador.SelectedIndex = 1;
+                    }
+                    lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
+                    lstOperaciones.Items.Add($"{txtNumero1.Text} {cmbOperador.Text} {txtNumero2.Text} = {lblResultado.Text}");
+                    if (double.TryParse(lblResultado.Text, out double resultadoOperacion))
+                    {
+                        if(resultadoOperacion == double.MinValue)
+                        {
+                            lblResultado.Text = "Error al dividir por 0";
+                        }
+                    }
+                    btnConvertirABinario.Enabled = true;
+                    btnConvertirADecimal.Enabled = true;//false
+                }
+                
             }
         }
         /// <summary>
