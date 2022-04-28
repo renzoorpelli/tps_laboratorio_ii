@@ -9,7 +9,7 @@ namespace Entidades
     /// <summary>
     /// No podrá tener clases heredadas.
     /// </summary>
-    public class Taller
+    public sealed class Taller
     {
         private List<Vehiculo> vehiculos;
         private int espacioDisponible;
@@ -96,7 +96,7 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-            if (!(taller is null) || !(vehiculo is null))
+            if (!(taller is null) && !(vehiculo is null))
             {
                 if (taller.vehiculos.Count < taller.espacioDisponible)
                 {
@@ -121,7 +121,7 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator -(Taller taller, Vehiculo vehiculo)
         {
-            if (!(taller is null) || !(vehiculo is null))
+            if (!(taller is null) && !(vehiculo is null))
             {
                 if (taller.vehiculos.Count > 0)
                 {
