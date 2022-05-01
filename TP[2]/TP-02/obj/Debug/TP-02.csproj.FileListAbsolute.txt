@@ -31,3 +31,13 @@ C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 2\TP-02-Cascara.r2\T
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 2\TP-02-Cascara.r2\TP-02\TP-02\obj\Debug\TP-02.csproj.CopyComplete
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 2\TP-02-Cascara.r2\TP-02\TP-02\obj\Debug\TP-02.exe
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 2\TP-02-Cascara.r2\TP-02\TP-02\obj\Debug\TP-02.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\bin\Debug\TP-02.exe
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\bin\Debug\TP-02.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\bin\Debug\Entidades.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\bin\Debug\Entidades.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\obj\Debug\TP-02.csproj.AssemblyReference.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\obj\Debug\TP-02.csproj.CopyComplete
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\obj\Debug\TP-02.exe
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 1\tps_laboratorio_ii\TP[2]\TP-02\obj\Debug\TP-02.pdb
