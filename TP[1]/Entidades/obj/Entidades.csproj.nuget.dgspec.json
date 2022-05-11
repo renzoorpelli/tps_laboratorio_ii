@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renzo\\Desktop\\tp modificado prueba 2\\TP[1]\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 1\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renzo\\Desktop\\tp modificado prueba 2\\TP[1]\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 1\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renzo\\Desktop\\tp modificado prueba 2\\TP[1]\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 1\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\renzo\\Desktop\\tp modificado prueba 2\\TP[1]\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 1\\tps_laboratorio_ii\\TP[1]\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\renzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renzo\\Desktop\\tp modificado prueba 2\\TP[1]\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 1\\tps_laboratorio_ii\\TP[1]\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
