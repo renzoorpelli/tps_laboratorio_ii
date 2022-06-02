@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCliente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cliente xsi:type="ClienteEmpresa">
+    <DomicilioCliente>lobos 123</DomicilioCliente>
+    <NombreCliente>Andreani</NombreCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+    <CuitEmpresa>123123123123</CuitEmpresa>
+  </Cliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <DomicilioCliente>lobos 124</DomicilioCliente>
+    <NombreCliente>oca</NombreCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+    <CuitEmpresa>312312</CuitEmpresa>
+  </Cliente>
+</ArrayOfCliente>

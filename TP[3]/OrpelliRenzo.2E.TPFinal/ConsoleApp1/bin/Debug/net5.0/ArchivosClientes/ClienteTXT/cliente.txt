@@ -1,0 +1,6 @@
+Cliente : ClienteEmpresa 
+Razon Social : Andreani 
+Cuit Cliente : 123123123123 
+Domicilio Cliente : lobos 123 
+Serivicios Cliente : Tipo Virus: Adware -  Dificultad Servicio: Dificil - Costo Servicio: 18000 - Fecha de Analsis: 23/03/2020 12:00:00 a. m.
+

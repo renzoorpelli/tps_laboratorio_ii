@@ -1,0 +1,66 @@
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.exe
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.deps.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.runtimeconfig.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.runtimeconfig.dev.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.AssemblyReference.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.GenerateResource.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.AssemblyInfoInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.AssemblyInfo.cs
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.CoreCompileInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\refint\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.genruntimeconfig.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\ref\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FormWhiteHatCS.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmAltaCliente.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.exe
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.deps.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.runtimeconfig.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.runtimeconfig.dev.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.AssemblyReference.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FormWhiteHatCS.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmAltaCliente.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.GenerateResource.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.AssemblyInfoInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.AssemblyInfo.cs
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.CoreCompileInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\refint\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.genruntimeconfig.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\ref\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmAdministracionClientes.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.CopyComplete
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.exe
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.deps.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.runtimeconfig.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.runtimeconfig.dev.json
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\SistemaAtencionAlPublico.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.AssemblyReference.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmAdministracionClientes.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FormWhiteHatCS.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.GenerateResource.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.AssemblyInfoInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.AssemblyInfo.cs
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.CoreCompileInputs.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.csproj.CopyComplete
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\refint\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.pdb
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.genruntimeconfig.cache
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\ref\SistemaAtencionAlPublico.dll
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmModificarCliente.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FormServicios.resources

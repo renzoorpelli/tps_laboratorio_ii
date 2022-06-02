@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCliente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cliente xsi:type="ClienteParticular">
+    <NombreCliente>Renzo</NombreCliente>
+    <DomicilioCliente>ditella 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <costoServicio>1800</costoServicio>
+        <dificultadServicio>Medio</dificultadServicio>
+        <tipoInfeccion>Malware</tipoInfeccion>
+        <CostoServicio>1800</CostoServicio>
+        <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
+      </Servicio>
+    </ListaServiciosCliente>
+    <CuilPersona>321321312</CuilPersona>
+  </Cliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <NombreCliente> Andreani</NombreCliente>
+    <DomicilioCliente> guemes 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <costoServicio>18000</costoServicio>
+        <dificultadServicio>Dificil</dificultadServicio>
+        <tipoInfeccion>Adware</tipoInfeccion>
+        <CostoServicio>18000</CostoServicio>
+        <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
+      </Servicio>
+    </ListaServiciosCliente>
+    <CuitEmpresa> 231231231</CuitEmpresa>
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <NombreCliente> Lucas Figueroa</NombreCliente>
+    <DomicilioCliente> oliden 321</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <costoServicio>18000</costoServicio>
+        <dificultadServicio>Medio</dificultadServicio>
+        <tipoInfeccion>Gusano</tipoInfeccion>
+        <CostoServicio>18000</CostoServicio>
+        <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
+      </Servicio>
+      <Servicio>
+        <costoServicio>1800</costoServicio>
+        <dificultadServicio>Dificil</dificultadServicio>
+        <tipoInfeccion>Malware</tipoInfeccion>
+        <CostoServicio>1800</CostoServicio>
+        <FechaAnalisis>2022-06-01T13:25:03.8178305-03:00</FechaAnalisis>
+      </Servicio>
+    </ListaServiciosCliente>
+    <CuilPersona> 321321231</CuilPersona>
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <NombreCliente>Martin Pereira</NombreCliente>
+    <DomicilioCliente>mitre 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <costoServicio>900</costoServicio>
+        <dificultadServicio>Facil</dificultadServicio>
+        <tipoInfeccion>Malware</tipoInfeccion>
+        <CostoServicio>900</CostoServicio>
+        <FechaAnalisis>2022-06-01T13:34:48.7257803-03:00</FechaAnalisis>
+      </Servicio>
+    </ListaServiciosCliente>
+    <CuilPersona>132231231</CuilPersona>
+  </Cliente>
+</ArrayOfCliente>

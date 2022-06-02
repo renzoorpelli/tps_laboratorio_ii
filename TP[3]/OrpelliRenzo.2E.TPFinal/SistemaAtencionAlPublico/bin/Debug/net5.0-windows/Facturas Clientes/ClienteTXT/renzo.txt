@@ -1,0 +1,8 @@
+Cliente : ClienteParticular
+Nombre Cliente : renzo
+Cuil Cliente : 123123
+Domicilio Cliente : ensenada 123
+
+Serivicios Cliente : Tipo Virus: Malware -  Dificultad Servicio: Facil - Costo Servicio: 1350 - Fecha de Analsis: 02/06/2022 01:01:43 p. m.
+Total A Pagar $1350
+
