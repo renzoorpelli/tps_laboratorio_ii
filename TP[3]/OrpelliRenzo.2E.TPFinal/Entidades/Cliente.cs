@@ -23,6 +23,9 @@ namespace Entidades
         {
             get;
         }
+        /// <summary>
+        /// propiedad encargada de obtener o asginar valor al atributo nombreCliente
+        /// </summary>
         public string NombreCliente
         {
             get { return this.nombreCliente; }
@@ -34,7 +37,9 @@ namespace Entidades
                 }
             }
         }
-
+        /// <summary>
+        /// propiedad encargada de obtener o asginar valor al atributo domicilioCliente
+        /// </summary>
         public string DomicilioCliente
         {
             get { return this.domicilioCliente; }
@@ -47,15 +52,19 @@ namespace Entidades
             }
         }
 
-        
 
+        /// <summary>
+        /// propiedad encargada de obtener o asginar valor al atributo categoriaCliente
+        /// </summary>
         public categoriaCliente CategoriaDelCliente
         {
             get { return this.categoriaDelCliente; }
             set { this.categoriaDelCliente = value; }
         }
 
-
+        /// <summary>
+        /// propiedad encargada de obtener la lista de servicios
+        /// </summary>
         public List<Servicio> ListaServiciosCliente
         {
             get { return this.listaServiciosCliente;}
@@ -105,6 +114,10 @@ namespace Entidades
         {
             return !(cliente1 == cliente2);
         }
+        /// <summary>
+        /// metodo encargado de obtener los datos de un cliente en un string
+        /// </summary>
+        /// <returns></returns>
         protected abstract string MostrarCliente();
 
         

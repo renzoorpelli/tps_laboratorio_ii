@@ -26,7 +26,9 @@ namespace Entidades
         #endregion
 
         #region propiedades
-
+        /// <summary>
+        /// propiedad encargada de retornar y asignar una lista valor al atributo listaClientes
+        /// </summary>
         public List<Cliente> ListaClientes
         {
             get { return this.listaClientes; }
@@ -39,7 +41,9 @@ namespace Entidades
             }
         }
 
-
+        /// <summary>
+        /// propiedad encargada de retornar y asignar valor al atributo cantidadClientesMaxima
+        /// </summary>
         public int CantidadClientesMaxima
         {
             get { return this.cantidadClientesMaxima; }
@@ -99,12 +103,11 @@ namespace Entidades
         /// </summary>
         /// <param name="administracion"></param>
         /// <param name="cliente"></param>
-        /// <returns></returns>
+        /// <returns>devuelve true si el cliente pudo ser agregado a la lista, false de lo contrario</returns>
         public static bool operator +(AdministracionEmpresa administracion, Cliente cliente)
         {
             if (administracion != cliente && administracion.ValidarCantidadClientes())
             {
-                //AdministracionEmpresa.AplicarDescuentoCliente(cliente);
                 administracion.listaClientes.Add(cliente);
                 return true;
             }
@@ -112,11 +115,11 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Elimina un clinete de la lista verificando primero que exista en ella y devolviendo un mensaje con el resultado de la operacion
+        /// Elimina un cliente de la lista verificando primero que exista en ella y devolviendo un mensaje con el resultado de la operacion
         /// </summary>
         /// <param name="administracion"></param>
         /// <param name="cliente"></param>
-        /// <returns></returns>
+        /// <returns>Algunos datos del cliente eliminado o en caso de no existir devolvera cliente no encontrado</returns>
         public static string operator -(AdministracionEmpresa administracion, Cliente cliente)
         {
             string resultado = "Cliente no encontrado";
@@ -127,20 +130,6 @@ namespace Entidades
             }
             return resultado;
 
-        }
-
-        /// <summary>
-        /// Imprime la lista de clientes  NO ESTA EN FUNCIONAMIENTO
-        /// </summary>
-        /// <returns></returns>
-        public string ImprimirListaClientes()
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (Cliente cliente in this.listaClientes)
-            {
-                sb.AppendLine("sarasa");
-            }
-            return sb.ToString();
         }
 
             #endregion

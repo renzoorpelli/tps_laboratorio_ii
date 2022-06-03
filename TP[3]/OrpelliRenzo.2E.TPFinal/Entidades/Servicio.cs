@@ -32,17 +32,23 @@ namespace Entidades
 
         #region propiedades
 
-
+        /// <summary>
+        /// propiedad encargada de retornar el tipo de infeccion del enumerado
+        /// </summary>
         public tipoVirus TipoInfeccion
         {
             get { return this.tipoInfeccion; }
         }
-
+        /// <summary>
+        /// propiedad encargada de retornar el tipo de dificultad del enumerado
+        /// </summary>
         public dificultadVirus DificultadServicio
         { 
             get { return this.dificultadServicio; } 
         }
-
+        /// <summary>
+        /// propiedad encargada de obtener y asignar un valor al servicio siempre que este sea un numero positivo
+        /// </summary>
        public double CostoServicio
         {
             get { return this.costoServicio; }
@@ -54,7 +60,9 @@ namespace Entidades
                 }
             }  
         }
-
+        /// <summary>
+        /// propiedad encargada de obtener y asignar una fecha de analisis del tipo Datetime
+        /// </summary>
         public DateTime FechaAnalisis
         {
             get
@@ -66,22 +74,38 @@ namespace Entidades
         #endregion
 
         #region metodos
-
+        /// <summary>
+        /// metodo encargado de retornar todos los datos del servicio
+        /// </summary>
+        /// <returns></returns>
         private string MostrarDatosServicio()
         {
             return $"Tipo Virus: {this.TipoInfeccion} -  Dificultad Servicio: {this.DificultadServicio} - Costo Servicio: {this.CostoServicio} - Fecha de Analsis: {this.FechaAnalisis}";
         }
-
+        /// <summary>
+        /// sobrecarga del metodo toString que llamara al metodo privado MostrarDatosServicio para que el listbox lo muestre de dicha manera
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.MostrarDatosServicio();
         }
-
+        /// <summary>
+        /// sobrecarga del operador == encargada de fijarse si un cliente ya posee el mismo servicio en la lista de servicios
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="servicio"></param>
+        /// <returns>devuelve true en caso de tenerlo, false de lo contrario</returns>
         public static bool operator ==(Cliente cliente, Servicio servicio)
         {
             return cliente.ListaServiciosCliente.Contains(servicio);
         }
-
+        /// <summary>
+        /// sobrecarga del operador != que tomara como referencia la sobrecarga del operador == negada
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="servicio"></param>
+        /// <returns>retornara true si son distintos, false de lo contrario</returns>
         public static bool operator !=(Cliente cliente, Servicio servicio)
         {
             return !(cliente == servicio);
@@ -122,7 +146,11 @@ namespace Entidades
             return resultado;
 
         }
-
+        /// <summary>
+        /// metodo encargado de aplicar un descuento a un cliente sobre un servicio solo si el cliente es de tipo categoria premium
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="servicio"></param>
         public static void AplicarDescuentoCliente(Cliente cliente, Servicio servicio)
         {
             if (cliente.CategoriaDelCliente == Cliente.categoriaCliente.Premium)

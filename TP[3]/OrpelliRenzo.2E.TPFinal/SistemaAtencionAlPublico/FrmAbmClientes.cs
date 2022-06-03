@@ -20,8 +20,6 @@ namespace SistemaAtencionAlPublico
         public FrmAdministracionClientes()
         {
             InitializeComponent();
-            this.cmbCategoriaCliente.DataSource = Enum.GetValues(typeof(Cliente.categoriaCliente));
-            this.cmbTipoCliente.DataSource = new List<string> { "Cliente Particular", "Empresa" };
             this.cmbTipoInfeccion.DataSource = Enum.GetValues(typeof(Servicio.tipoVirus));
             this.cmbDificultadVirus.DataSource = Enum.GetValues(typeof(Servicio.dificultadVirus));
             this.administracion = new AdministracionEmpresa(50);//50 CLIENTES MAXIMO
@@ -32,11 +30,11 @@ namespace SistemaAtencionAlPublico
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        /// <summary>
+        /// evento de cierre de formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAdministracionClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -49,75 +47,23 @@ namespace SistemaAtencionAlPublico
             }
         }
 
-        private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.cmbTipoCliente.SelectedItem.ToString() == "Empresa")
-            {
-                this.lblNombre.Text = "Razon Social";
-                this.lblCuitCuil.Text = "CUIT Empresa";
-                this.lblDomicilio.Text = "Domicilio Legal";
-            }
-            else
-            {
-                this.lblNombre.Text = "Nombre Completo";
-                this.lblCuitCuil.Text = "CUIL Persona";
-                this.lblDomicilio.Text = "Domicilio Particular";
-            }
-        }
-
+        /// <summary>
+        /// metodo perteneciente al evento Click del btnAltaCliente
+        /// instanciara un nuevo formulario de alta cliente donde se podran
+        /// cargar los nuevos clientes y estos se veran reflejadso en el listbox del formAbmCliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
-            Cliente cliente;
-            string mensajeAlerta = string.Empty;
-            try
-            {
-                if (TextBoxValidos() && NombreValido(this.txtNombre.Text) && CuitOCuilInvalido(this.txtBoxCuilCuit.Text)) // modificado
-                {
-                    if (this.cmbTipoCliente.SelectedItem.ToString() == "Empresa")
-                    {
-                        cliente = new ClienteEmpresa((Cliente.categoriaCliente)this.cmbCategoriaCliente.SelectedItem, this.txtNombre.Text, this.txtBoxCuilCuit.Text, this.txtDomicilio.Text);
-
-                    }
-                    else
-                    {
-                        cliente = new ClienteParticular((Cliente.categoriaCliente)this.cmbCategoriaCliente.SelectedItem, this.txtNombre.Text, this.txtBoxCuilCuit.Text, this.txtDomicilio.Text);
-                    }
-                    if (administracion + cliente)
-                    {
-                        mensajeAlerta = "Se agregó nuevo cliente exitosamente!";
-                    }
-                    else
-                    {
-                        mensajeAlerta = "No se agregó al cliente";
-                    }
-                    MessageBox.Show(mensajeAlerta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Algunos campos estan vacioso los datos son incorrectos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (NombreInvalidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (CuitOCuilInvalidoException ex)
-            {
-                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (CamposVaciosException ex)
-            {
-                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
+            FrmAltaCliente altaCliente = new FrmAltaCliente(administracion);
+            altaCliente.ShowDialog();
             this.ActualizarListaClientes();
-            this.LimpiarFormAltaCliente();
         }
-
+        /// <summary>
+        /// Metodo encargado de actualizar la lista de clientes y habilitar la carga de servicios si la lista 
+        /// cuenta con clientes cargados
+        /// </summary>
         private void ActualizarListaClientes()
         {
             this.lstClientes.DataSource = null;
@@ -128,7 +74,13 @@ namespace SistemaAtencionAlPublico
             }
 
         }
-
+        /// <summary>
+        /// metodo del evento click de btnEliminarCliente se encargar de eliminar un cliente de la lista verificando
+        /// que la lista tenga clientes y que uno este seleccioado. Si surge algun error capturara una excepcion de
+        /// tipo ClienteNoSeleccionadoException
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
             try
@@ -159,6 +111,15 @@ namespace SistemaAtencionAlPublico
             this.ActualizarListaClientes();
         }
 
+        /// <summary>
+        /// metodo del evento click del boton btnModificarCliente, se encargar de llevar todos los datos 
+        /// del cliente seleccionado al nuevo formulario y renovara estos datos del cliente en la lista del 
+        /// frmAbmCliente, tambien verificara que la lista tenga clientes y que uno sea seleccionado
+        /// si surge algun error capturara una excepcion de tipo ClienteNoSeleccionadoException
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificarCliente_Click(object sender, EventArgs e)
         {
             try
@@ -188,19 +149,7 @@ namespace SistemaAtencionAlPublico
 
 
         #region validaciones
-        /// <summary>
-        /// Verifica que los campos de ingreso de clientes tengan datos ingresados, caso contrario lanzara una excepcion de tipo CamposVaciosException en forma de mensaje
-        /// </summary>
-        /// <returns>true si los campos estan llenos o una excepcion si los campos estan vacios</returns>
-        /// <exception cref="CamposVaciosException"></exception>
-        private bool TextBoxValidos()
-        {
-            if (string.IsNullOrWhiteSpace(this.txtNombre.Text) || string.IsNullOrWhiteSpace(this.txtBoxCuilCuit.Text) || string.IsNullOrWhiteSpace(this.txtDomicilio.Text))
-            {
-                throw new CamposVaciosException("Algunos campos son invalidos");
-            }
-            return true;
-        }
+        
         /// <summary>
         /// controla que el valor del servicio ingresado sea de tipo numerico
         /// </summary>
@@ -216,25 +165,13 @@ namespace SistemaAtencionAlPublico
             }
             return true;
         }
-
-        private bool NombreValido(string nombre)
-        {
-            if (int.TryParse(nombre, out int num))
-            {
-                throw new NombreInvalidoException("El nombre es invalido, revise el campo");
-            }
-            return true;
-        }
-
-        private bool CuitOCuilInvalido(string cuitOcuil)
-        {
-            if (!int.TryParse(cuitOcuil, out int num))
-            {
-                throw new CuitOCuilInvalidoException("El Cuit/Cuil es invalido, revise el campo");
-            }
-            return true;
-        }
-
+        /// <summary>
+        /// metodo encargado de validar que la fecha del servicio no sea mayor a la actual, si es mayor lanzara una
+        /// exccepcion del tipo FechaServicioInvalidaException de lo contrario retornara true
+        /// </summary>
+        /// <param name="fechaServicio"></param>
+        /// <returns></returns>
+        /// <exception cref="FechServicioInvalidaException"></exception>
         private bool ValidarFecha(DateTime fechaServicio)
         {
             if (fechaServicio > DateTime.Now)
@@ -244,7 +181,11 @@ namespace SistemaAtencionAlPublico
             return true;
         }
 
-
+        /// <summary>
+        /// metodo encargado de verificar si hay clientes en la lista (listbox) o si hay un cliente seleccionado.
+        /// </summary>
+        /// <returns>lanzara una excepcion de tipo ClienteNoSeleccionadoException si cumple las dos condiciones o true de lo contrario</returns>
+        /// <exception cref="ClienteNoSeleccionadoException"></exception>
         private bool HayClientes()
         {
             if (this.lstClientes.Items.Count == 0 || this.lstClientes.SelectedIndex == -1)
@@ -256,7 +197,15 @@ namespace SistemaAtencionAlPublico
         }
 
         #endregion
-
+        /// <summary>
+        /// metodo del evento click de btnAltaServicio encargado de dar de alta a un cliente seleccionado, verificara si hay clientes o si se selecciona alguno 
+        /// o de caso contrario capturar las siguientes excepciones:
+        /// ClienteNoSeleccionadoException si ningun cliente es seleccionado o no hay clientes
+        /// CamposIvalidosException si alguno de los campos es invalido
+        /// FechServicioInvalidaException si la fecha de servicio es mayor a la actual
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaServicios_Click(object sender, EventArgs e)
         {
             try
@@ -298,15 +247,12 @@ namespace SistemaAtencionAlPublico
 
         }
 
-
-        private void LimpiarFormAltaCliente()
-        {
-            this.txtNombre.Text = " ";
-            this.txtBoxCuilCuit.Text = " ";
-            this.txtDomicilio.Text = " ";
-        }
-
-
+        /// <summary>
+        /// metodo del evento click del boton btnMostrarServicios encargado de mostrar los ervicios del cliente seleccionado, verificara si hay clientes
+        /// en la lista o si hay un cliente seleccionado. De caso contario, capturara una excepcion de tipo ClienteNoSeleccionadoException
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonMostrarServicios_Click(object sender, EventArgs e)
         {
             try
@@ -331,7 +277,15 @@ namespace SistemaAtencionAlPublico
             }
             
         }
-
+        /// <summary>
+        /// metodo del evento click del  boton btnGuardarClientes encargado de serializar la lista de clientes con sus respectivos servicios en caso de tenerlos
+        /// verificara que haya clientes en la lista, podra capturar las sigueintes excepciones: 
+        /// ClienteNoSeleccionadoException si no hay clientes en la lista
+        /// ArchivoNullException si surge algun problema al serializar
+        /// si todo es correcto mostrara un mensaje por pantalla mostrando la ruta de guardado del archivo xml.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarClientes_Click(object sender, EventArgs e)
         {
             try
@@ -357,7 +311,13 @@ namespace SistemaAtencionAlPublico
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        /// <summary>
+        /// metodo del evento click del boton btnCargarClientes encargado de cargar la lista de clientes del archivo xml, si el archivo es null
+        /// capturara una excepcion de tipo ArchivoNullException y mostrara el error por pantalla, caso contrario mostrar un mensaje de 
+        /// operacion exitosa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCargarClientes_Click(object sender, EventArgs e)
         {
             try
@@ -376,6 +336,14 @@ namespace SistemaAtencionAlPublico
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        /// <summary>
+        /// metodo del evento click del btnSalir encargado de cerrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

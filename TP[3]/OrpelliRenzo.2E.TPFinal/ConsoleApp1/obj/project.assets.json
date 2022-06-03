@@ -32,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 3 REFACTORIZACION 2\\OrpelliRenzo.2E.TPFinal\\ConsoleApp1\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 3 REFACTORIZACION 2\\OrpelliRenzo.2E.TPFinal\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 3 REFACTORIZACION 2\\OrpelliRenzo.2E.TPFinal\\ConsoleApp1\\ConsoleAppTest.csproj",
+      "projectName": "ConsoleAppTest",
+      "projectPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 3 REFACTORIZACION 2\\OrpelliRenzo.2E.TPFinal\\ConsoleApp1\\ConsoleAppTest.csproj",
       "packagesPath": "C:\\Users\\renzo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\renzo\\Documents\\programacion\\Trabajos Practicos\\TP 3 REFACTORIZACION 2\\OrpelliRenzo.2E.TPFinal\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",

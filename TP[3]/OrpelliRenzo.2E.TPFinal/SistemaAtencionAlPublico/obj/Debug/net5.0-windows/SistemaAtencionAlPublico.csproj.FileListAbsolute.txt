@@ -64,3 +64,4 @@ C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\ref\SistemaAtencionAlPublico.dll
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmModificarCliente.resources
 C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FormServicios.resources
+C:\Users\renzo\Documents\programacion\Trabajos Practicos\TP 3 REFACTORIZACION 2\OrpelliRenzo.2E.TPFinal\SistemaAtencionAlPublico\obj\Debug\net5.0-windows\SistemaAtencionAlPublico.FrmAltaCliente.resources

@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaAtencionAlPublico", "SistemaAtencionAlPublico\SistemaAtencionAlPublico.csproj", "{881DA2F2-66A1-4362-AB5D-827E02ECC37E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{4BEDC7C6-F2B8-4BDC-A783-45F26D3B7EB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTest", "ConsoleApp1\ConsoleAppTest.csproj", "{4BEDC7C6-F2B8-4BDC-A783-45F26D3B7EB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasUnitarias", "PruebasUnitarias\PruebasUnitarias.csproj", "{902723FD-FC44-48B5-A2F8-DE24EBDEDCD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebasUnitarias", "PruebasUnitarias\PruebasUnitarias.csproj", "{902723FD-FC44-48B5-A2F8-DE24EBDEDCD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
