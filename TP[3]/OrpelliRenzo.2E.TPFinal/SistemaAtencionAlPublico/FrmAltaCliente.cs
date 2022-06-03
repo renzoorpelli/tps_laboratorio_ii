@@ -21,18 +21,23 @@ namespace SistemaAtencionAlPublico
             this.administracion = administracion;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
+        /// <summary>
+        /// metodo del evento click de btnAltaCliente encargado de agregar un cliente a la lista, se verificaran que los campos ingresados sean 
+        /// validos y de serlo se agregara el cliente a la lista, caso contrario se capturaran las excepciones:
+        /// NombreInvalidoException si el nombre ingresado no es valido
+        /// CuitOCuilInvalido si el cuit o cuil es invalido
+        /// CamposVaciosException si algun campo esta vacio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
             Cliente cliente;
             string mensajeAlerta = string.Empty;
             try
             {
-                if (TextBoxValidos() && NombreValido(this.txtNombre.Text) && CuitOCuilInvalido(this.txtBoxCuilCuit.Text)) // modificado
+                if (TextBoxValidos() && NombreValido(this.txtNombre.Text) && CuitOCuilInvalido(this.txtBoxCuilCuit.Text)) 
                 {
                     if (this.cmbTipoCliente.SelectedItem.ToString() == "Empresa")
                     {
@@ -76,7 +81,11 @@ namespace SistemaAtencionAlPublico
             }
             this.LimpiarFormAltaCliente();
         }
-
+        /// <summary>
+        /// metodo envento SelectedIndexChanged de cmbTipo Cliente el cual mostrara distintos label segun el tipo de cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cmbTipoCliente.SelectedItem.ToString() == "Empresa")
@@ -109,27 +118,40 @@ namespace SistemaAtencionAlPublico
             return true;
         }
 
-
+        /// <summary>
+        /// metodo encargado de verificar si el nombre ingresado es valido 
+        /// 
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns>true si el nombre es valido, excepcion de tipo NombreInvalidoException en caso de no serlo</returns>
+        /// <exception cref="NombreInvalidoException"></exception>
         private bool NombreValido(string nombre)
         {
-            if (int.TryParse(nombre, out int num))
+            if (int.TryParse(nombre, out int num) || nombre.Length < 3)
             {
                 throw new NombreInvalidoException("El nombre es invalido, revise el campo");
             }
             return true;
         }
-
+        /// <summary>
+        /// metodo encargado de verificar si el cuit o cuil ingresado es valido
+        /// </summary>
+        /// <param name="cuitOcuil"></param>
+        /// <returns>true si es valido o lanza una excepcion de tipo CuitOCuilInvalidoException en caso de no serlo </returns>
+        /// <exception cref="CuitOCuilInvalidoException"></exception>
         private bool CuitOCuilInvalido(string cuitOcuil)
         {
-            if (!int.TryParse(cuitOcuil, out int num))
+            if (!double.TryParse(cuitOcuil, out double num) && cuitOcuil.Length < 10)
             {
-                throw new CuitOCuilInvalidoException("El Cuit/Cuil es invalido, revise el campo");
+                throw new CuitOCuilInvalidoException("El Cuit/Cuil es invalido, revise el campo (recomendado: 11 digitos y solo numeros)");
             }
             return true;
         }
         #endregion
 
-
+        /// <summary>
+        /// metodo encargado de "vaciar" los textbox utliziado para despues de la carga de un cliente
+        /// </summary>
         private void LimpiarFormAltaCliente()
         {
             this.txtNombre.Text = " ";
@@ -153,6 +175,15 @@ namespace SistemaAtencionAlPublico
                     e.Cancel = true;
                 }
             }
+        }
+        /// <summary>
+        /// metodo evento click btnSalir encargado de cerrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

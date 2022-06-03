@@ -37,61 +37,34 @@ namespace SistemaAtencionAlPublico
             this.Close();
         }
 
-        private void FrmAltaCliente_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
-
-        private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.cmbTipoCliente.SelectedItem.ToString() == "Empresa")
-            {
-                this.lblNombre.Text = "Razon Social";
-                this.lblCuitCuil.Text = "CUIT Empresa";
-                this.lblDomicilio.Text = "Domicilio Legal";
-            }
-            else
-            {
-                this.lblNombre.Text = "Nombre Completo";
-                this.lblCuitCuil.Text = "CUIL Persona";
-                this.lblDomicilio.Text = "Domicilio Particular";
-            }
-        }
-
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             try
             {
-                if (TextBoxValidos())
+                if (TextBoxValidos() && NombreValido(txtNombre.Text))
                 {
                     this.cliente.NombreCliente = this.txtNombre.Text;
                     cliente.CategoriaDelCliente = (Cliente.categoriaCliente)this.cmbCategoriaCliente.SelectedItem;
                     cliente.DomicilioCliente = this.txtDomicilio.Text;
-                    if (cliente is ClienteEmpresa)
-                    {
-                        ((ClienteEmpresa)cliente).CuitEmpresa = this.txtBoxCuilCuit.Text;
-
-
-                    }
-                    else if (cliente is ClienteParticular)
-                    {
-
-                        ((ClienteParticular)cliente).CuilPersona = this.txtBoxCuilCuit.Text;
-                    }
+                    
                     this.Close();
                 }
 
-            }catch (CamposVaciosException ex)
+            }
+            catch(NombreInvalidoException ex)
             {
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch(Exception ex)
+            catch (CamposVaciosException ex)
+            {
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
-
 
         private void FrmModificarCliente_Load(object sender, EventArgs e)
         {
@@ -100,17 +73,25 @@ namespace SistemaAtencionAlPublico
             this.txtDomicilio.Text = cliente.DomicilioCliente;
             if (cliente is ClienteEmpresa)
             {
+                this.lblNombre.Text = "Razon Social";
+                this.lblCuitCuil.Text = "CUIT Empresa";
+                this.lblDomicilio.Text = "Domicilio Legal";
                 this.txtBoxCuilCuit.Text = ((ClienteEmpresa)cliente).CuitEmpresa;
+                this.txtBoxCuilCuit.Enabled = false;
                 this.cmbTipoCliente.Enabled = false;
             }
             else if (cliente is ClienteParticular)
-            {               
+            {
+                this.lblNombre.Text = "Nombre Completo";
+                this.lblCuitCuil.Text = "CUIL Persona";
+                this.lblDomicilio.Text = "Domicilio Particular";
                 this.txtBoxCuilCuit.Text = ((ClienteParticular)cliente).CuilPersona;
+                this.txtBoxCuilCuit.Enabled = false;
                 this.cmbTipoCliente.Enabled = false;
             }
 
         }
-
+        #region validaciones
         /// <summary>
         /// valida que los textbox sean validos y en caso de que alguno no lo sea lanza una excepcion del tipo CamposVaciosException
         /// </summary>
@@ -124,5 +105,24 @@ namespace SistemaAtencionAlPublico
             }
             return true;
         }
+
+        /// <summary>
+        /// metodo encargado de verificar si el nombre ingresado es valido 
+        /// 
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns>true si el nombre es valido, excepcion de tipo NombreInvalidoException en caso de no serlo</returns>
+        /// <exception cref="NombreInvalidoException"></exception>
+        private bool NombreValido(string nombre)
+        {
+            if (int.TryParse(nombre, out int num) || nombre.Length < 3)
+            {
+                throw new NombreInvalidoException("El nombre es invalido, revise el campo");
+            }
+            return true;
+        }
+
+        
+        #endregion
     }
 }

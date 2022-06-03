@@ -103,7 +103,6 @@
             this.cmbTipoCliente.Name = "cmbTipoCliente";
             this.cmbTipoCliente.Size = new System.Drawing.Size(121, 25);
             this.cmbTipoCliente.TabIndex = 12;
-            this.cmbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCliente_SelectedIndexChanged);
             // 
             // lblDomicilio
             // 
@@ -214,7 +213,6 @@
             this.Name = "FrmModificarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Cliente";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAltaCliente_FormClosing);
             this.Load += new System.EventHandler(this.FrmModificarCliente_Load);
             this.gpbDatosCliente.ResumeLayout(false);
             this.gpbDatosCliente.PerformLayout();

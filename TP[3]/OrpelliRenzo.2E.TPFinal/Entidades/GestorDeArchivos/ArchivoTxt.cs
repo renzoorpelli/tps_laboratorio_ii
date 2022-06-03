@@ -46,6 +46,12 @@ namespace Entidades.GestorDeArchivos
 
 
         }
+        /// <summary>
+        /// recibe el archivo por parametro de tipo string
+        /// </summary>
+        /// <param name="nombreArchivo"></param>
+        /// <returns>devuelve el contenido del archivo, de lo contrario capturara una excepcion de tipo ArchivoNullException </returns>
+        /// <exception cref="ArchivoNullException"></exception>
         public string Leer(string nombreArchivo)
         {
             try
@@ -70,7 +76,12 @@ namespace Entidades.GestorDeArchivos
             return null;
         }
 
-
+        /// <summary>
+        /// valida la extension del archivo
+        /// </summary>
+        /// <param name="nombreArchivo"></param>
+        /// <returns>true si la extension del arcivo es .txt de lo contrario lanzara una excepcion de tipo ArchivoNullException </returns>
+        /// <exception cref="ArchivoNullException"></exception>
         public bool ValidarExtensionTxt(string nombreArchivo)
         {
             if (Path.GetExtension(nombreArchivo) == ".txt")

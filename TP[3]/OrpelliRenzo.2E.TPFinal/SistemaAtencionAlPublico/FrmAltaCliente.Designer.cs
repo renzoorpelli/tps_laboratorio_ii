@@ -41,7 +41,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.gpbDatosCliente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,17 +186,17 @@
             this.lblTitulo.TabIndex = 9;
             this.lblTitulo.Text = "Alta Cliente";
             // 
-            // button1
+            // btnSalir
             // 
-            this.button1.BackColor = System.Drawing.Color.PaleGreen;
-            this.button1.Font = new System.Drawing.Font("Noto Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(144, 453);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(309, 46);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSalir.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnSalir.Font = new System.Drawing.Font("Noto Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.Location = new System.Drawing.Point(144, 453);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(309, 46);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmAltaCliente
             // 
@@ -204,7 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(632, 527);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.gpbDatosCliente);
             this.Controls.Add(this.btnAltaCliente);
             this.Controls.Add(this.lblTitulo);
@@ -234,6 +234,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnAltaCliente;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

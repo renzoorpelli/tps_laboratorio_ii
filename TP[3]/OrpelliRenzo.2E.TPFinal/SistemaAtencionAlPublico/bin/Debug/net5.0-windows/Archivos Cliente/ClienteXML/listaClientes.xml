@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCliente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cliente xsi:type="ClienteParticular">
-    <NombreCliente>Renzo</NombreCliente>
+    <NombreCliente>Renzo Orpelli</NombreCliente>
     <DomicilioCliente>ditella 123</DomicilioCliente>
     <CategoriaDelCliente>Premium</CategoriaDelCliente>
     <ListaServiciosCliente>
@@ -13,7 +13,7 @@
         <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
       </Servicio>
     </ListaServiciosCliente>
-    <CuilPersona>321321312</CuilPersona>
+    <CuilPersona>32132131212</CuilPersona>
   </Cliente>
   <Cliente xsi:type="ClienteEmpresa">
     <NombreCliente> Andreani</NombreCliente>
@@ -28,7 +28,7 @@
         <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
       </Servicio>
     </ListaServiciosCliente>
-    <CuitEmpresa> 231231231</CuitEmpresa>
+    <CuitEmpresa> 23123123132</CuitEmpresa>
   </Cliente>
   <Cliente xsi:type="ClienteParticular">
     <NombreCliente> Lucas Figueroa</NombreCliente>
@@ -50,7 +50,7 @@
         <FechaAnalisis>2022-06-01T13:25:03.8178305-03:00</FechaAnalisis>
       </Servicio>
     </ListaServiciosCliente>
-    <CuilPersona> 321321231</CuilPersona>
+    <CuilPersona> 32132123167</CuilPersona>
   </Cliente>
   <Cliente xsi:type="ClienteParticular">
     <NombreCliente>Martin Pereira</NombreCliente>
@@ -65,6 +65,6 @@
         <FechaAnalisis>2022-06-01T13:34:48.7257803-03:00</FechaAnalisis>
       </Servicio>
     </ListaServiciosCliente>
-    <CuilPersona>132231231</CuilPersona>
+    <CuilPersona>13223123145</CuilPersona>
   </Cliente>
 </ArrayOfCliente>

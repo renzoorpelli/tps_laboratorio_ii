@@ -38,7 +38,7 @@
             // 
             this.btnAdministracionClientes.BackColor = System.Drawing.Color.Plum;
             this.btnAdministracionClientes.Font = new System.Drawing.Font("Noto Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdministracionClientes.Location = new System.Drawing.Point(167, 160);
+            this.btnAdministracionClientes.Location = new System.Drawing.Point(167, 123);
             this.btnAdministracionClientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdministracionClientes.Name = "btnAdministracionClientes";
             this.btnAdministracionClientes.Size = new System.Drawing.Size(360, 72);
@@ -51,7 +51,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSalir.Font = new System.Drawing.Font("Noto Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalir.Location = new System.Drawing.Point(167, 273);
+            this.btnSalir.Location = new System.Drawing.Point(167, 229);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(360, 72);
@@ -64,7 +64,7 @@
             // 
             this.lblCreador.AutoSize = true;
             this.lblCreador.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCreador.Location = new System.Drawing.Point(544, 509);
+            this.lblCreador.Location = new System.Drawing.Point(544, 347);
             this.lblCreador.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreador.Name = "lblCreador";
             this.lblCreador.Size = new System.Drawing.Size(137, 14);
@@ -76,7 +76,7 @@
             this.lblNombreEmpresa.AutoSize = true;
             this.lblNombreEmpresa.BackColor = System.Drawing.Color.PaleGreen;
             this.lblNombreEmpresa.Font = new System.Drawing.Font("Noto Mono", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombreEmpresa.Location = new System.Drawing.Point(143, 29);
+            this.lblNombreEmpresa.Location = new System.Drawing.Point(127, 61);
             this.lblNombreEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreEmpresa.Name = "lblNombreEmpresa";
             this.lblNombreEmpresa.Size = new System.Drawing.Size(432, 28);
@@ -88,7 +88,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(694, 532);
+            this.ClientSize = new System.Drawing.Size(694, 368);
             this.Controls.Add(this.lblNombreEmpresa);
             this.Controls.Add(this.lblCreador);
             this.Controls.Add(this.btnSalir);
