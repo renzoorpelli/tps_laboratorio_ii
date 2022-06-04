@@ -19,7 +19,7 @@ namespace Entidades.Interfaces
 
 
         /// <summary>
-        /// Lee los datos de un archivo con un objeto del tipo generico
+        /// Lee los datos de un archivo del tipo generico
         /// </summary>
         /// <param name="ruta">el directorio del archivo</param>
         /// <returns>retorna el objeto</returns>

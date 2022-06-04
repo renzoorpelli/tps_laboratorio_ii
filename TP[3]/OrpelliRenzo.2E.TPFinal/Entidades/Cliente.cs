@@ -11,6 +11,7 @@ namespace Entidades
     public abstract class Cliente
     {
         public enum categoriaCliente { Premium, Classic }
+        protected int id;
         private categoriaCliente categoriaDelCliente;
         private string nombreCliente;
         private string domicilioCliente;
@@ -19,6 +20,10 @@ namespace Entidades
 
         #region propiedades
 
+        public  int IdCliente
+        {
+            get { return this.id; }
+        }
         public abstract string TipoCliente
         {
             get;
@@ -84,7 +89,7 @@ namespace Entidades
         {
             this.nombreCliente = nombreCliente;
             this.domicilioCliente = domicilioCliente;
-            this.categoriaDelCliente = categoria;
+            this.categoriaDelCliente = categoria;   
         }
         #endregion
 

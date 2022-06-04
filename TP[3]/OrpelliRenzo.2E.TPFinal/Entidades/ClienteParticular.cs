@@ -25,6 +25,8 @@ namespace Entidades
         #endregion
 
         #region propiedades
+
+
         /// <summary>
         /// propiedad encargada de obterner el tipo de cliente en string
         /// </summary>
@@ -61,9 +63,9 @@ namespace Entidades
         protected override string MostrarCliente()
         {
             StringBuilder datos = new StringBuilder();
-            datos.AppendLine($"Cliente : {this.GetType().Name}");
+            datos.AppendLine($"Cliente :        {this.GetType().Name}");
             datos.AppendLine($"Nombre Cliente : {base.NombreCliente}");
-            datos.AppendLine($"Cuil Cliente : {this.CuilPersona}");
+            datos.AppendLine($"Cuil Cliente :   {this.CuilPersona}");
             datos.AppendLine($"Domicilio Cliente : {base.DomicilioCliente}");
             return datos.ToString();
         }
@@ -74,7 +76,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-          return  $"{ this.GetType().Name}           { base.NombreCliente}                             {this.CategoriaDelCliente}";
+          return  $"{this.GetType().Name}           { base.NombreCliente}                             {this.CategoriaDelCliente}";
         }
         /// <summary>
         /// sobrecarga del operador ==  que recibe dos clientes de tipo empresa y compara por el atributo CuilPersona

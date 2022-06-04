@@ -1,8 +1,0 @@
-Cliente : ClienteParticular
-Nombre Cliente : Martin Pereira
-Cuil Cliente : 132231231
-Domicilio Cliente : mitre 123
-
-Serivicios Cliente : Tipo Virus: Malware -  Dificultad Servicio: Facil - Costo Servicio: 900 - Fecha de Analsis: 01/06/2022 01:34:48 p. m.
-Total A Pagar $900
-

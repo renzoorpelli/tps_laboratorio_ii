@@ -98,11 +98,11 @@ namespace SistemaAtencionAlPublico
                     ArchivoTxt factura = new ArchivoTxt();
                     if (this.cliente is ClienteEmpresa)
                     {
-                        MessageBox.Show(factura.Escribir($"{this.cliente.NombreCliente}.txt", ((ClienteEmpresa)cliente).EmitirFactura()), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(factura.Escribir($"{this.cliente.NombreCliente}-{DateTime.Now.ToString("dddd, dd MMMM yyyy")}.txt", ((ClienteEmpresa)cliente).EmitirFactura()), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show(factura.Escribir($"{this.cliente.NombreCliente}.txt", ((ClienteParticular)cliente).EmitirFactura()), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(factura.Escribir($"{this.cliente.NombreCliente}-{DateTime.Now.ToString("dddd, dd MMMM yyyy")}.txt", ((ClienteParticular)cliente).EmitirFactura()), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 } 
 

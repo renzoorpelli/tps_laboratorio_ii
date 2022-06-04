@@ -1,9 +1,0 @@
-Cliente : ClienteParticular
-Nombre Cliente :  Lucas Figueroa
-Cuil Cliente :  321321231
-Domicilio Cliente :  oliden 321
-
-Serivicios Cliente : Tipo Virus: Gusano -  Dificultad Servicio: Medio - Costo Servicio: 18000 - Fecha de Analsis: 01/06/2022 01:18:27 p. m.
-Serivicios Cliente : Tipo Virus: Malware -  Dificultad Servicio: Dificil - Costo Servicio: 1800 - Fecha de Analsis: 01/06/2022 01:25:03 p. m.
-Total A Pagar $19800
-

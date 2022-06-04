@@ -34,7 +34,7 @@ namespace ConsoleApp1
                 // crea un archivo de tipo txt en el path ConsoleApp1\bin\Debug\net5.0\ArchivoClientes\ClienteTXT
                 //archivo.Escribir("cliente.txt", empresa.MostrarCliente());
 
-                //CREA UN ARHICOV JSON 
+                //CREA UN ARHICOV XML 
                 Console.WriteLine(serializer.Escribir("clientes2.xml", administracion.ListaClientes));
 
 

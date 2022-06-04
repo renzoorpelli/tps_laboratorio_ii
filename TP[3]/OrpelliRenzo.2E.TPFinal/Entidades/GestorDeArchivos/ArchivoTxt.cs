@@ -56,7 +56,7 @@ namespace Entidades.GestorDeArchivos
         {
             try
             {
-                if (ValidarExtensionTxt(nombreArchivo))
+                if (ValidarExtensionTxt(nombreArchivo) && ExisteArchivo(nombreArchivo))
                 {
                     using (StreamReader streamReader = new StreamReader($"{base.rutaBase}\\{nombreArchivo}"))
                     {
@@ -82,7 +82,7 @@ namespace Entidades.GestorDeArchivos
         /// <param name="nombreArchivo"></param>
         /// <returns>true si la extension del arcivo es .txt de lo contrario lanzara una excepcion de tipo ArchivoNullException </returns>
         /// <exception cref="ArchivoNullException"></exception>
-        public bool ValidarExtensionTxt(string nombreArchivo)
+        private bool ValidarExtensionTxt(string nombreArchivo)
         {
             if (Path.GetExtension(nombreArchivo) == ".txt")
             {
@@ -91,5 +91,14 @@ namespace Entidades.GestorDeArchivos
             throw new ArchivoNullException("La extensión del archivo txt es invalida");
         }
 
+
+        private bool ExisteArchivo(string nombreArchivo)
+        {
+            if(!File.Exists(nombreArchivo))
+            {
+                throw new ArchivoNullException("El archivo no existe, presione 'Guardar Clientes'");
+            }
+            return true;
+        }
     }
 }

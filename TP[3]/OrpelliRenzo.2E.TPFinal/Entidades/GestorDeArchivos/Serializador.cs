@@ -15,7 +15,14 @@ namespace Entidades.GestorDeArchivos
         {
 
         }
-
+        /// <summary>
+        /// metodo encargado de serializar la lista de clientes, recibe el nombre archivo y contenido de tipo generico
+        /// lo serializara y guardara en la ruta especificada en la clase GestorDeArchivo
+        /// </summary>
+        /// <param name="nombreArchivo">string con el nombre del archivo</param>
+        /// <param name="elemento"></param>
+        /// <returns>un string con la ruta del archivo guardado o de caso contrario lanzara excepciones del tipo ArchivoNullException</returns>
+        /// <exception cref="ArchivoNullException"></exception>
         public string Escribir(string nombreArchivo,T elemento)
         {
             string resultado = "Error al Guardar";
@@ -46,14 +53,19 @@ namespace Entidades.GestorDeArchivos
             }
             return resultado;
         }
-
+        /// <summary>
+        /// metodo encargado de leer un archivo de tipo xml, deserializandolo y devolviendolo el objeto T 
+        /// </summary>
+        /// <param name="nombreArchivo">string con el nombre del archivo</param>
+        /// <returns>returna el objeto deserializadom caso contrario lanzara excepcioones del tipo ArchivoNullException</returns>
+        /// <exception cref="ArchivoNullException"></exception>
         public T Leer(string nombreArchivo)
         {
             try
             {
                 if(tipo == ETipo.ClienteXML)
                 {
-                    if (ValidarExtensionXml(nombreArchivo))
+                    if (ValidarExtensionXml(nombreArchivo) && ExisteArchivo(nombreArchivo))
                     {
                         using (XmlTextReader xmlTextReader = new XmlTextReader($"{rutaBase}\\{nombreArchivo}"))
                         {
@@ -75,7 +87,12 @@ namespace Entidades.GestorDeArchivos
         }
 
         #region Validaciones
-
+        /// <summary>
+        /// metodo encargado de validar la extension de un archivo xml
+        /// </summary>
+        /// <param name="nombreArchivo">string con el nombre del archivo</param>
+        /// <returns>devolvera true si la extension fue xml de lo contrario lanzara un excelcion del tipo ArchivoNullException</returns>
+        /// <exception cref="ArchivoNullException"></exception>
         public bool ValidarExtensionXml(string nombreArchivo)
         {
             if(Path.GetExtension(nombreArchivo) != ".xml")
@@ -85,6 +102,14 @@ namespace Entidades.GestorDeArchivos
             return true;
         }
 
+        private bool ExisteArchivo(string nombreArchivo)
+        {
+            if (!File.Exists(nombreArchivo))
+            {
+                throw new ArchivoNullException("El archivo no existe, presione 'Guardar Clientes'");
+            }
+            return true;
+        }
         #endregion
     }
 }
