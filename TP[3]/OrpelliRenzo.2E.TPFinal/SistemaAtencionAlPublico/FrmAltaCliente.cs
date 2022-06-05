@@ -54,14 +54,14 @@ namespace SistemaAtencionAlPublico
                     }
                     else
                     {
-                        mensajeAlerta = "No se agregó al cliente";
+                        throw new CuitOCuilInvalidoException("El Cuit/Cuil ingresado ya se encuentra en la lista");
                     }
                     MessageBox.Show(mensajeAlerta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Algunos campos estan vacioso los datos son incorrectos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                }   
+            }
+            catch (CantidadDeClientesAlcanzadaException ex)
+            {
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (NombreInvalidoException ex)
             {
@@ -113,7 +113,7 @@ namespace SistemaAtencionAlPublico
         {
             if (string.IsNullOrWhiteSpace(this.txtNombre.Text) || string.IsNullOrWhiteSpace(this.txtBoxCuilCuit.Text) || string.IsNullOrWhiteSpace(this.txtDomicilio.Text))
             {
-                throw new CamposVaciosException("Algunos campos son invalidos");
+                throw new CamposVaciosException("Algunos campos son invalidos o estan vacios, reviselos");
             }
             return true;
         }

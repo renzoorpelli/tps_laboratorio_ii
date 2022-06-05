@@ -9,7 +9,7 @@ using Entidades.Excepciones;
 
 namespace Entidades.GestorDeArchivos
 {
-    public  class Serializador<T> : GestorDeArchivo,  IArchivo<T> where T: class, new()
+    public class Serializador<T> : GestorDeArchivo, IArchivo<T> where T : class, new()
     {
         public Serializador(ETipo tipo) : base("Archivos Cliente", tipo)
         {
@@ -23,7 +23,7 @@ namespace Entidades.GestorDeArchivos
         /// <param name="elemento"></param>
         /// <returns>un string con la ruta del archivo guardado o de caso contrario lanzara excepciones del tipo ArchivoNullException</returns>
         /// <exception cref="ArchivoNullException"></exception>
-        public string Escribir(string nombreArchivo,T elemento)
+        public string Escribir(string nombreArchivo, T elemento)
         {
             string resultado = "Error al Guardar";
 
@@ -31,7 +31,7 @@ namespace Entidades.GestorDeArchivos
             {
                 if (tipo == ETipo.ClienteXML)
                 {
-                    if (ValidarExtensionXml(nombreArchivo))
+                    if (ValidarExtension(nombreArchivo))
                     {
                         using (XmlTextWriter xmlTextWriter = new XmlTextWriter($"{rutaBase}\\{nombreArchivo}", Encoding.UTF8))
                         {
@@ -41,9 +41,10 @@ namespace Entidades.GestorDeArchivos
                             resultado = $"Archivo Guardado Existosamente en {this.rutaBase}{nombreArchivo}";
                         }
                     }
-                    
+
                 }
-            }catch(ArchivoNullException ex)
+            }
+            catch (ArchivoNullException ex)
             {
                 resultado = ex.Message;
             }
@@ -57,15 +58,15 @@ namespace Entidades.GestorDeArchivos
         /// metodo encargado de leer un archivo de tipo xml, deserializandolo y devolviendolo el objeto T 
         /// </summary>
         /// <param name="nombreArchivo">string con el nombre del archivo</param>
-        /// <returns>returna el objeto deserializadom caso contrario lanzara excepcioones del tipo ArchivoNullException</returns>
+        /// <returns>returna el objeto deserializado, caso contrario lanzara excepcioones del tipo ArchivoNullException</returns>
         /// <exception cref="ArchivoNullException"></exception>
         public T Leer(string nombreArchivo)
         {
             try
             {
-                if(tipo == ETipo.ClienteXML)
+                if (tipo == ETipo.ClienteXML)
                 {
-                    if (ValidarExtensionXml(nombreArchivo) && ExisteArchivo(nombreArchivo))
+                    if (ValidarExtension(nombreArchivo) && ExisteArchivo($"{rutaBase}\\{nombreArchivo}"))
                     {
                         using (XmlTextReader xmlTextReader = new XmlTextReader($"{rutaBase}\\{nombreArchivo}"))
                         {
@@ -77,7 +78,7 @@ namespace Entidades.GestorDeArchivos
             }
             catch (ArchivoNullException ex)
             {
-                throw ex;// REVISAR
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -93,22 +94,27 @@ namespace Entidades.GestorDeArchivos
         /// <param name="nombreArchivo">string con el nombre del archivo</param>
         /// <returns>devolvera true si la extension fue xml de lo contrario lanzara un excelcion del tipo ArchivoNullException</returns>
         /// <exception cref="ArchivoNullException"></exception>
-        public bool ValidarExtensionXml(string nombreArchivo)
+        public bool ValidarExtension(string nombreArchivo)
         {
-            if(Path.GetExtension(nombreArchivo) != ".xml")
+            if (Path.GetExtension(nombreArchivo) != ".xml")
             {
                 throw new ArchivoNullException("La extensión del archivo xml es invalida");
             }
             return true;
         }
-
+        /// <summary>
+        /// valida que el archivo que se le quiera pasar al metodo leer exista
+        /// </summary>
+        /// <param name="nombreArchivo">el nombre del archivo</param>
+        /// <returns>true si existe, caso contrario una excepcion de tipo ArchivoNullException</returns>
+        /// <exception cref="ArchivoNullException"></exception>
         private bool ExisteArchivo(string nombreArchivo)
         {
-            if (!File.Exists(nombreArchivo))
+            if (File.Exists(nombreArchivo))
             {
-                throw new ArchivoNullException("El archivo no existe, presione 'Guardar Clientes'");
+                return true;
             }
-            return true;
+            throw new ArchivoNullException("El archivo no existe, presione 'Guardar Clientes'");
         }
         #endregion
     }

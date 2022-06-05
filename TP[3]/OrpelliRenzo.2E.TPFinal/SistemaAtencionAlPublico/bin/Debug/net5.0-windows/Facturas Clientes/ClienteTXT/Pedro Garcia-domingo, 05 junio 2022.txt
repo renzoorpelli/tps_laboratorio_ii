@@ -1,0 +1,8 @@
+Cliente :        ClienteParticular
+Nombre Cliente :  Pedro Garcia
+CUIL Persona :   20214665569
+Domicilio Cliente : Figueroa 2318
+
+Serivicios Cliente : Tipo Virus: Troyano -  Dificultad Servicio: Dificil - Costo Servicio: 18000 - Fecha de Analsis: 05/06/2022 06:17:40 p. m.
+Total A Pagar $18000
+

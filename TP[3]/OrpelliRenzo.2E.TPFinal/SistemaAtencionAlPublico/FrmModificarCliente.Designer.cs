@@ -38,7 +38,7 @@
             this.cmbCategoriaCliente = new System.Windows.Forms.ComboBox();
             this.lblCategoriaCliente = new System.Windows.Forms.Label();
             this.txtBoxCuilCuit = new System.Windows.Forms.TextBox();
-            this.lblCuitCuil = new System.Windows.Forms.Label();
+            this.lblCuitOCuil = new System.Windows.Forms.Label();
             this.btnGuardarCliente = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             this.gpbDatosCliente.Controls.Add(this.cmbCategoriaCliente);
             this.gpbDatosCliente.Controls.Add(this.lblCategoriaCliente);
             this.gpbDatosCliente.Controls.Add(this.txtBoxCuilCuit);
-            this.gpbDatosCliente.Controls.Add(this.lblCuitCuil);
+            this.gpbDatosCliente.Controls.Add(this.lblCuitOCuil);
             this.gpbDatosCliente.Controls.Add(this.txtNombre);
             this.gpbDatosCliente.Controls.Add(this.lblNombre);
             this.gpbDatosCliente.Font = new System.Drawing.Font("Noto Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -152,15 +152,15 @@
             this.txtBoxCuilCuit.Size = new System.Drawing.Size(106, 22);
             this.txtBoxCuilCuit.TabIndex = 5;
             // 
-            // lblCuitCuil
+            // lblCuitOCuil
             // 
-            this.lblCuitCuil.AutoSize = true;
-            this.lblCuitCuil.Font = new System.Drawing.Font("Noto Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCuitCuil.Location = new System.Drawing.Point(100, 117);
-            this.lblCuitCuil.Name = "lblCuitCuil";
-            this.lblCuitCuil.Size = new System.Drawing.Size(23, 14);
-            this.lblCuitCuil.TabIndex = 4;
-            this.lblCuitCuil.Text = "\"\"";
+            this.lblCuitOCuil.AutoSize = true;
+            this.lblCuitOCuil.Font = new System.Drawing.Font("Noto Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCuitOCuil.Location = new System.Drawing.Point(100, 117);
+            this.lblCuitOCuil.Name = "lblCuitOCuil";
+            this.lblCuitOCuil.Size = new System.Drawing.Size(23, 14);
+            this.lblCuitOCuil.TabIndex = 4;
+            this.lblCuitOCuil.Text = "\"\"";
             // 
             // btnGuardarCliente
             // 
@@ -227,7 +227,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.GroupBox gpbDatosCliente;
         private System.Windows.Forms.TextBox txtBoxCuilCuit;
-        private System.Windows.Forms.Label lblCuitCuil;
+        private System.Windows.Forms.Label lblCuitOCuil;
         private System.Windows.Forms.ComboBox cmbCategoriaCliente;
         private System.Windows.Forms.Label lblCategoriaCliente;
         private System.Windows.Forms.Label lblDomicilio;

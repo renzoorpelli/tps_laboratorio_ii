@@ -1,70 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCliente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20440463399</CuitOCuil>
     <NombreCliente>Renzo Orpelli</NombreCliente>
     <DomicilioCliente>ditella 123</DomicilioCliente>
     <CategoriaDelCliente>Premium</CategoriaDelCliente>
     <ListaServiciosCliente>
       <Servicio>
         <costoServicio>1800</costoServicio>
-        <dificultadServicio>Medio</dificultadServicio>
+        <dificultadServicio>Facil</dificultadServicio>
         <tipoInfeccion>Malware</tipoInfeccion>
         <CostoServicio>1800</CostoServicio>
-        <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
+        <FechaAnalisis>2022-06-05T18:17:40.4608347-03:00</FechaAnalisis>
       </Servicio>
     </ListaServiciosCliente>
-    <CuilPersona>32132131212</CuilPersona>
   </Cliente>
   <Cliente xsi:type="ClienteEmpresa">
+    <CuitOCuil>33223344445</CuitOCuil>
     <NombreCliente> Andreani</NombreCliente>
-    <DomicilioCliente> guemes 123</DomicilioCliente>
-    <CategoriaDelCliente>Premium</CategoriaDelCliente>
-    <ListaServiciosCliente>
-      <Servicio>
-        <costoServicio>18000</costoServicio>
-        <dificultadServicio>Dificil</dificultadServicio>
-        <tipoInfeccion>Adware</tipoInfeccion>
-        <CostoServicio>18000</CostoServicio>
-        <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
-      </Servicio>
-    </ListaServiciosCliente>
-    <CuitEmpresa> 23123123132</CuitEmpresa>
-  </Cliente>
-  <Cliente xsi:type="ClienteParticular">
-    <NombreCliente> Lucas Figueroa</NombreCliente>
-    <DomicilioCliente> oliden 321</DomicilioCliente>
-    <CategoriaDelCliente>Premium</CategoriaDelCliente>
-    <ListaServiciosCliente>
-      <Servicio>
-        <costoServicio>18000</costoServicio>
-        <dificultadServicio>Medio</dificultadServicio>
-        <tipoInfeccion>Gusano</tipoInfeccion>
-        <CostoServicio>18000</CostoServicio>
-        <FechaAnalisis>2022-06-01T13:18:27.0190255-03:00</FechaAnalisis>
-      </Servicio>
-      <Servicio>
-        <costoServicio>1800</costoServicio>
-        <dificultadServicio>Dificil</dificultadServicio>
-        <tipoInfeccion>Malware</tipoInfeccion>
-        <CostoServicio>1800</CostoServicio>
-        <FechaAnalisis>2022-06-01T13:25:03.8178305-03:00</FechaAnalisis>
-      </Servicio>
-    </ListaServiciosCliente>
-    <CuilPersona> 32132123167</CuilPersona>
-  </Cliente>
-  <Cliente xsi:type="ClienteParticular">
-    <NombreCliente>Martin Pereira</NombreCliente>
     <DomicilioCliente>mitre 123</DomicilioCliente>
     <CategoriaDelCliente>Premium</CategoriaDelCliente>
     <ListaServiciosCliente>
       <Servicio>
-        <costoServicio>900</costoServicio>
+        <costoServicio>18000</costoServicio>
         <dificultadServicio>Facil</dificultadServicio>
         <tipoInfeccion>Malware</tipoInfeccion>
-        <CostoServicio>900</CostoServicio>
-        <FechaAnalisis>2022-06-01T13:34:48.7257803-03:00</FechaAnalisis>
+        <CostoServicio>18000</CostoServicio>
+        <FechaAnalisis>2022-06-05T18:17:40.4608347-03:00</FechaAnalisis>
       </Servicio>
     </ListaServiciosCliente>
-    <CuilPersona>13223123145</CuilPersona>
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20214665569</CuitOCuil>
+    <NombreCliente> Pedro Garcia</NombreCliente>
+    <DomicilioCliente>Figueroa 2318</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <costoServicio>18000</costoServicio>
+        <dificultadServicio>Dificil</dificultadServicio>
+        <tipoInfeccion>Troyano</tipoInfeccion>
+        <CostoServicio>18000</CostoServicio>
+        <FechaAnalisis>2022-06-05T18:17:40.4608347-03:00</FechaAnalisis>
+      </Servicio>
+    </ListaServiciosCliente>
+  </Cliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <CuitOCuil>3033884567</CuitOCuil>
+    <NombreCliente>Ocasa</NombreCliente>
+    <DomicilioCliente>guemes 321</DomicilioCliente>
+    <CategoriaDelCliente>Classic</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <costoServicio>20000</costoServicio>
+        <dificultadServicio>Dificil</dificultadServicio>
+        <tipoInfeccion>Gusano</tipoInfeccion>
+        <CostoServicio>20000</CostoServicio>
+        <FechaAnalisis>2022-06-05T18:17:40.4608347-03:00</FechaAnalisis>
+      </Servicio>
+      <Servicio>
+        <costoServicio>200000</costoServicio>
+        <dificultadServicio>Dificil</dificultadServicio>
+        <tipoInfeccion>Adware</tipoInfeccion>
+        <CostoServicio>200000</CostoServicio>
+        <FechaAnalisis>2022-06-05T18:17:40.4608347-03:00</FechaAnalisis>
+      </Servicio>
+    </ListaServiciosCliente>
   </Cliente>
 </ArrayOfCliente>

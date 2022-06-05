@@ -71,21 +71,20 @@ namespace SistemaAtencionAlPublico
             this.txtNombre.Text = cliente.NombreCliente;
             this.cmbCategoriaCliente.SelectedItem = cliente.CategoriaDelCliente;
             this.txtDomicilio.Text = cliente.DomicilioCliente;
+            this.txtBoxCuilCuit.Text = cliente.CuitOCuil;
             if (cliente is ClienteEmpresa)
             {
                 this.lblNombre.Text = "Razon Social";
-                this.lblCuitCuil.Text = "CUIT Empresa";
+                this.lblCuitOCuil.Text = "CUIT Empresa";
                 this.lblDomicilio.Text = "Domicilio Legal";
-                this.txtBoxCuilCuit.Text = ((ClienteEmpresa)cliente).CuitEmpresa;
                 this.txtBoxCuilCuit.Enabled = false;
                 this.cmbTipoCliente.Enabled = false;
             }
             else if (cliente is ClienteParticular)
             {
                 this.lblNombre.Text = "Nombre Completo";
-                this.lblCuitCuil.Text = "CUIL Persona";
+                this.lblCuitOCuil.Text = "CUIL Persona";
                 this.lblDomicilio.Text = "Domicilio Particular";
-                this.txtBoxCuilCuit.Text = ((ClienteParticular)cliente).CuilPersona;
                 this.txtBoxCuilCuit.Enabled = false;
                 this.cmbTipoCliente.Enabled = false;
             }

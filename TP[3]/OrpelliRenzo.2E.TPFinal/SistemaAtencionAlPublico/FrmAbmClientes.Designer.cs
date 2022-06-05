@@ -342,6 +342,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblListadoEmpleados);
             this.Controls.Add(this.lstClientes);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAdministracionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -9,7 +9,6 @@ namespace Entidades
     public class ClienteParticular : Cliente, IFactura
     {
         #region atributos
-        private string cuilPersona;
         #endregion
 
         #region constructores
@@ -17,10 +16,9 @@ namespace Entidades
         {
 
         }
-        public ClienteParticular(categoriaCliente categoriaPersona, string nombrePersona, string cuilPersona, string domicilioPersona)
-            : base(nombrePersona, domicilioPersona, categoriaPersona)
+        public ClienteParticular(categoriaCliente categoriaPersona, string nombrePersona, string cuitOcuil, string domicilioPersona)
+            : base(nombrePersona, domicilioPersona, categoriaPersona, cuitOcuil)
         {           
-            this.cuilPersona = cuilPersona;
         }
         #endregion
 
@@ -34,22 +32,7 @@ namespace Entidades
         {
             get { return typeof(ClienteParticular).Name; }
         }
-        /// <summary>
-        /// propiedad encargada de obtener y asignar valor a la propiedad cuilPersona
-        /// </summary>
-        public string CuilPersona
-        {
-            get { return this.cuilPersona; }
-            set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    this.cuilPersona = value;
-
-                }
-            }
-        }
-
+        
 
 
         #endregion
@@ -65,7 +48,7 @@ namespace Entidades
             StringBuilder datos = new StringBuilder();
             datos.AppendLine($"Cliente :        {this.GetType().Name}");
             datos.AppendLine($"Nombre Cliente : {base.NombreCliente}");
-            datos.AppendLine($"Cuil Cliente :   {this.CuilPersona}");
+            datos.AppendLine($"CUIL Persona :   {this.CuitOCuil}");
             datos.AppendLine($"Domicilio Cliente : {base.DomicilioCliente}");
             return datos.ToString();
         }
@@ -78,26 +61,7 @@ namespace Entidades
         {
           return  $"{this.GetType().Name}           { base.NombreCliente}                             {this.CategoriaDelCliente}";
         }
-        /// <summary>
-        /// sobrecarga del operador ==  que recibe dos clientes de tipo empresa y compara por el atributo CuilPersona
-        /// </summary>
-        /// <param name="e1"></param>
-        /// <param name="e2"></param>
-        /// <returns>en caso de ser iguales devuelve true, de lo contrario false</returns>
-        public static bool operator ==(ClienteParticular e1, ClienteParticular e2)
-        {
-            return e1.CuilPersona == e2.CuilPersona;
-        }
-        /// <summary>
-        ///sobrecarga del operador != que recibe dos clientes, y compara utilizando la sobrecarga del operador == 
-        /// </summary>
-        /// <param name="e1"></param>
-        /// <param name="e2"></param>
-        /// <returns>en caso de ser distintos devuelve true, de lo contrario false</returns>
-        public static bool operator !=(ClienteParticular e1, ClienteParticular e2)
-        {
-            return !(e1 == e2);
-        }
+        
         /// <summary>
         /// metodo de la interfaz IFactura encargado de mostrar todos los datos del cliente,
         /// incluyendo los servicios y calculando el total por los servicios, Su funcion es 

@@ -34,7 +34,7 @@ namespace Entidades
             get { return this.listaClientes; }
             set
             {
-                if(value is not null)
+                if (value is not null)
                 {
                     this.listaClientes = value;
                 }
@@ -58,7 +58,7 @@ namespace Entidades
         /// <summary>
         /// Valida la cantidad de clientes de la lista no sea mayor a la cantidad de clientes permitidos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>true si no fue alcanzada, de lo contrario lanzara una excepcion de tipo CantidadDeClientesAlcanzadaException</returns>
         private bool ValidarCantidadClientes()
         {
             if (this.ListaClientes.Count == this.cantidadClientesMaxima)
@@ -75,7 +75,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator ==(AdministracionEmpresa administracion, Cliente cliente)
         {
-            if(administracion is not null && cliente is not null)
+            if (administracion is not null && cliente is not null)
             {
                 foreach (Cliente c in administracion.listaClientes)
                 {
@@ -84,7 +84,7 @@ namespace Entidades
                         return true;
                     }
                 }
-            } 
+            }
             return false;
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace Entidades
         /// <returns>devuelve true si el cliente pudo ser agregado a la lista, false de lo contrario</returns>
         public static bool operator +(AdministracionEmpresa administracion, Cliente cliente)
         {
-            if (administracion != cliente && administracion.ValidarCantidadClientes() && administracion.validarCuitsOCuil(cliente))
+            if (administracion != cliente && administracion.ValidarCantidadClientes())
             {
                 administracion.listaClientes.Add(cliente);
                 return true;
@@ -130,41 +130,8 @@ namespace Entidades
             }
             return resultado;
 
-        }
-        /// <summary>
-        /// metodo encargado de validar si el cuit o cuiil del cliente que se le pasa por parametro ya existe en la lista, utiliza las sobrecargas del 
-        /// operador == de ClienteEmpresa y ClienteParticular, en caso de ya existir lanzara excepciones de tipo CuitOCuilInvalidoException
-        /// </summary>
-        /// <param name="cliente"></param>
-        /// <returns>true si no existen en la lista o una excepcion de tipo CuitOCuilInvalidoException si existe</returns>
-        /// <exception cref="CuitOCuilInvalidoException"></exception>
-        public bool validarCuitsOCuil(Cliente cliente)
-        {
-            if (cliente is ClienteEmpresa)
-            {
-                foreach (ClienteEmpresa item in this.listaClientes)
-                {
-                    if(item == (ClienteEmpresa) cliente)
-                    {
-                        throw new CuitOCuilInvalidoException("Ya existe ese CUIT en la lista");
-                        //return false;
-                    }
-                }
-            }
-            else
-            {
-                foreach(ClienteParticular item in this.listaClientes)
-                {
-                    if (item == (ClienteParticular)cliente)
-                    {
-                        throw new CuitOCuilInvalidoException("Ya existe ese CUIL en la lista");
-                        //return false;
-                    }
-                }
-            }
-            return true;
-        }
-            #endregion
-
-        }
+        } 
+        #endregion
     }
+
+}

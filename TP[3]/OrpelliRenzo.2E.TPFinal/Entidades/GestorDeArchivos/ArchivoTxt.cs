@@ -17,18 +17,18 @@ namespace Entidades.GestorDeArchivos
         }
 
         /// <summary>
-        /// Recibe el nombre del archivo y el contenido a escribir del mismo de tipo string
+        /// Recibe el nombre del archivo y el contenido a escribir del mismo de tipo string y lo guarda en un archivo de tipo txt
         /// </summary>
-        /// <param name="nombreArchivo"></param>
-        /// <param name="contenido"></param>
-        /// <returns></returns>
+        /// <param name="nombreArchivo">el nombre del archivo</param>
+        /// <param name="contenido">el contenido del archivo en tipo string</param>
+        /// <returns>devuelve un mensaje con el resultado de la operacion</returns>
         /// <exception cref="ArchivoNullException"></exception>
         public string Escribir(string nombreArchivo, string contenido)
         {
             string puedoLeer = "Error al escribir el archivo de texto";
             try
             {
-                if (ValidarExtensionTxt(nombreArchivo))
+                if (ValidarExtension(nombreArchivo))
                 {
                     using (StreamWriter streamWriter = new StreamWriter($"{base.rutaBase}\\{nombreArchivo}"))
                     {
@@ -45,36 +45,7 @@ namespace Entidades.GestorDeArchivos
             return puedoLeer;
 
 
-        }
-        /// <summary>
-        /// recibe el archivo por parametro de tipo string
-        /// </summary>
-        /// <param name="nombreArchivo"></param>
-        /// <returns>devuelve el contenido del archivo, de lo contrario capturara una excepcion de tipo ArchivoNullException </returns>
-        /// <exception cref="ArchivoNullException"></exception>
-        public string Leer(string nombreArchivo)
-        {
-            try
-            {
-                if (ValidarExtensionTxt(nombreArchivo) && ExisteArchivo(nombreArchivo))
-                {
-                    using (StreamReader streamReader = new StreamReader($"{base.rutaBase}\\{nombreArchivo}"))
-                    {
-                        return streamReader.ReadToEnd();
-                    }
-                }
-
-            }
-            catch (ArchivoNullException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw new ArchivoNullException("Error al leer el archivo", ex);
-            }
-            return null;
-        }
+        }    
 
         /// <summary>
         /// valida la extension del archivo
@@ -82,7 +53,7 @@ namespace Entidades.GestorDeArchivos
         /// <param name="nombreArchivo"></param>
         /// <returns>true si la extension del arcivo es .txt de lo contrario lanzara una excepcion de tipo ArchivoNullException </returns>
         /// <exception cref="ArchivoNullException"></exception>
-        private bool ValidarExtensionTxt(string nombreArchivo)
+        public bool ValidarExtension(string nombreArchivo)
         {
             if (Path.GetExtension(nombreArchivo) == ".txt")
             {
@@ -91,14 +62,5 @@ namespace Entidades.GestorDeArchivos
             throw new ArchivoNullException("La extensión del archivo txt es invalida");
         }
 
-
-        private bool ExisteArchivo(string nombreArchivo)
-        {
-            if(!File.Exists(nombreArchivo))
-            {
-                throw new ArchivoNullException("El archivo no existe, presione 'Guardar Clientes'");
-            }
-            return true;
-        }
     }
 }

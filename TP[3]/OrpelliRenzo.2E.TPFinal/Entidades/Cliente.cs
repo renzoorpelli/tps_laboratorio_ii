@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Entidades.Excepciones;
 
 namespace Entidades
 {
@@ -11,18 +12,24 @@ namespace Entidades
     public abstract class Cliente
     {
         public enum categoriaCliente { Premium, Classic }
-        protected int id;
         private categoriaCliente categoriaDelCliente;
         private string nombreCliente;
         private string domicilioCliente;
+        private string cuitOCuil;
         private List<Servicio> listaServiciosCliente;
 
 
         #region propiedades
 
-        public  int IdCliente
+        public string CuitOCuil
         {
-            get { return this.id; }
+            get { return this.cuitOCuil; }
+            set {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    this.cuitOCuil = value; 
+                }
+            }
         }
         public abstract string TipoCliente
         {
@@ -72,7 +79,7 @@ namespace Entidades
         /// </summary>
         public List<Servicio> ListaServiciosCliente
         {
-            get { return this.listaServiciosCliente;}
+            get { return this.listaServiciosCliente; }
         }
 
 
@@ -85,11 +92,12 @@ namespace Entidades
         {
             this.listaServiciosCliente = new List<Servicio>();
         }
-        public Cliente(string nombreCliente, string domicilioCliente, categoriaCliente categoria):this()
+        public Cliente(string nombreCliente, string domicilioCliente, categoriaCliente categoria, string cuitOCuil) : this()
         {
             this.nombreCliente = nombreCliente;
             this.domicilioCliente = domicilioCliente;
-            this.categoriaDelCliente = categoria;   
+            this.categoriaDelCliente = categoria;
+            this.cuitOCuil = cuitOCuil;
         }
         #endregion
 
@@ -98,14 +106,15 @@ namespace Entidades
 
         #region metodos
         /// <summary>
-        /// sobrecarga al operador, si dos clientes tienen el mismo nombre y domicilio son iguales
+        /// sobrecarga al operador, si dos clientes tienen el mismo cuit o cuil
         /// </summary>
         /// <param name="cliente1"></param>
         /// <param name="cliente2"></param>
         /// <returns>true si son iguales,false de lo contrario</returns>
         public static bool operator ==(Cliente cliente1, Cliente cliente2)
         {
-            return cliente1.NombreCliente == cliente2.NombreCliente && cliente1.DomicilioCliente == cliente2.DomicilioCliente;
+            return cliente1.cuitOCuil ==  cliente2.cuitOCuil;
+            
         }
 
 
@@ -125,8 +134,8 @@ namespace Entidades
         /// <returns></returns>
         protected abstract string MostrarCliente();
 
-        
 
+        
 
         #endregion
     }

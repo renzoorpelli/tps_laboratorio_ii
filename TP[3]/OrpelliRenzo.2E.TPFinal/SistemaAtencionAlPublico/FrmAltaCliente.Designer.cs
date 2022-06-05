@@ -208,6 +208,8 @@
             this.Controls.Add(this.gpbDatosCliente);
             this.Controls.Add(this.btnAltaCliente);
             this.Controls.Add(this.lblTitulo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAltaCliente";
             this.Text = "FrmAltaCliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAltaCliente_FormClosing);

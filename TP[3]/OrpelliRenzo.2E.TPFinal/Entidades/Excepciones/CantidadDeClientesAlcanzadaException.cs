@@ -12,11 +12,20 @@ namespace Entidades.Excepciones
         public CantidadDeClientesAlcanzadaException()
         {
         }
-
+        /// <summary>
+        /// crea una excepcion con un mensaje
+        /// </summary>
+        /// <param name="message">mensaje de la excepcion</param>
         public CantidadDeClientesAlcanzadaException(string message) : base(message)
         {
         }
 
+
+        /// <summary>
+        /// crea una expcecion con un emnsaje y su innerException
+        /// </summary>
+        /// <param name="message">el mensaje de la excepcion</param>
+        /// <param name="innerException">la innerException de la excepcion</param>
         public CantidadDeClientesAlcanzadaException(string message, Exception innerException) : base(message, innerException)
         {
         }

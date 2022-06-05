@@ -89,6 +89,8 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminarServicio);
             this.Controls.Add(this.lstbServicios);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormServicios";
             this.Text = "Servicios";
             this.Load += new System.EventHandler(this.FormServicios_Load);

@@ -94,6 +94,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAdministracionClientes);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormWhiteHatCS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

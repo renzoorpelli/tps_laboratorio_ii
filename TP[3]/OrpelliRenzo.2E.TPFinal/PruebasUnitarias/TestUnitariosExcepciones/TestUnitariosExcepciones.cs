@@ -16,7 +16,7 @@ namespace PruebasUnitarias
             #endregion
 
             #region Assert
-            serializador.ValidarExtensionXml("index.js");
+            serializador.ValidarExtension("index.js");
 
 
             #endregion
