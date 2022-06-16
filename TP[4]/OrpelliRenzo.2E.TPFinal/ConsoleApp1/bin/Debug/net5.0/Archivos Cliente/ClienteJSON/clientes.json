@@ -1,0 +1,18 @@
+[
+  {
+    "CuitEmpresa": "123123123123",
+    "TipoCliente": "Cliente",
+    "DomicilioCliente": "lobos 123",
+    "NombreCliente": "Andreani",
+    "CategoriaDelCliente": 0,
+    "ListaServiciosCliente": []
+  },
+  {
+    "CuitEmpresa": "312312",
+    "TipoCliente": "Cliente",
+    "DomicilioCliente": "lobos 124",
+    "NombreCliente": "oca",
+    "CategoriaDelCliente": 0,
+    "ListaServiciosCliente": []
+  }
+]

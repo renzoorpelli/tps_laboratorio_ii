@@ -1,0 +1,9 @@
+Cliente :      ClienteEmpresa
+Razon Social : Ocasa
+Cuit Empresa : 3033884567
+Domicilio Cliente : guemes 321
+
+Serivicios Cliente : Tipo Virus: Gusano -  Dificultad Servicio: Dificil - Costo Servicio: 20000 - Fecha de Analsis: 05/06/2022 06:17:40 p. m.
+Serivicios Cliente : Tipo Virus: Adware -  Dificultad Servicio: Dificil - Costo Servicio: 200000 - Fecha de Analsis: 05/06/2022 06:17:40 p. m.
+Total A Pagar $220000
+

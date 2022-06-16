@@ -1,0 +1,8 @@
+Cliente :      ClienteEmpresa
+Razon Social :  Andreani
+Cuit Cliente :  23123123132
+Domicilio Cliente :  guemes 123
+
+Serivicios Cliente : Tipo Virus: Adware -  Dificultad Servicio: Dificil - Costo Servicio: 18000 - Fecha de Analsis: 01/06/2022 01:18:27 p. m.
+Total A Pagar $18000
+

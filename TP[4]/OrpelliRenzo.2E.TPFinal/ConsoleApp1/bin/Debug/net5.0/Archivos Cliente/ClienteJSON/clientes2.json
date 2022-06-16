@@ -1,0 +1,16 @@
+[
+  {
+    "TipoCliente": "ClienteEmpresa",
+    "DomicilioCliente": "lobos 123",
+    "NombreCliente": "Andreani",
+    "CategoriaDelCliente": 0,
+    "ListaServiciosCliente": []
+  },
+  {
+    "TipoCliente": "ClienteEmpresa",
+    "DomicilioCliente": "lobos 124",
+    "NombreCliente": "oca",
+    "CategoriaDelCliente": 0,
+    "ListaServiciosCliente": []
+  }
+]
