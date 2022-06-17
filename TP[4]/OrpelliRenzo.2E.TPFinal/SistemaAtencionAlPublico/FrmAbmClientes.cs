@@ -19,6 +19,7 @@ namespace SistemaAtencionAlPublico
     //delegado encargado de recibir un formulario y referenciar al metodo InicarAltaCliente
     public delegate void AbrirFormulario (Form form);
 
+    //delegado que hace referencia al metodo ActualizarListaClientes
     public delegate void ActualizarListaCliente();
     public partial class FrmAdministracionClientes : Form
     {
@@ -27,8 +28,9 @@ namespace SistemaAtencionAlPublico
         private CancellationToken cancellationToken;
         private bool cargadoDesdeBaseDeDatos;
 
-
+        //evento asociado a  el metodo ActualizarListaClientes
         public event ActualizarListaCliente ActualizarLista;
+
         public FrmAdministracionClientes()
         {
             InitializeComponent();
@@ -45,27 +47,11 @@ namespace SistemaAtencionAlPublico
 
         }
 
-        /// <summary>
-        /// evento de cierre de formulario
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FrmAdministracionClientes_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult resultado = MessageBox.Show("¿Está seguro que quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado != DialogResult.Yes)
-                {
-                    e.Cancel = true;
-                }
-            }
-        }
+       
 
         /// <summary>
-        /// metodo perteneciente al evento Click del btnAltaCliente
-        /// instanciara un nuevo formulario de alta cliente donde se podran
-        /// cargar los nuevos clientes y estos se veran reflejadso en el listbox del formAbmCliente
+        ///  metodo perteneciente al evento Click del btnAltaCliente
+        ///  instanciara un nuevo formulario de alta cliente el cual se ejecutara en un hilo secundario y permitira al usuario agregar clientes a la lista
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -82,7 +68,13 @@ namespace SistemaAtencionAlPublico
             }
 
         }
-
+        /// <summary>
+        /// metodo encargado mostrar el formulario que se esta ejecutando en un hilo secundario
+        /// preguntara si el el manipulador del control del formulario se creo en otro hilo y como la primera vez
+        /// dara true invocara el delegado que referencia al metodo con los argumentos para permitir el control
+        /// 
+        /// </summary>
+        /// <param name="altaCliente"></param>
         private void IniciarAltaClientes(Form altaCliente)
         {
             if (this.InvokeRequired)
@@ -93,7 +85,7 @@ namespace SistemaAtencionAlPublico
             }
             else
             {
-                altaCliente.Show();
+                altaCliente.ShowDialog();
             }
 
         }
@@ -126,7 +118,8 @@ namespace SistemaAtencionAlPublico
         //}
         /// <summary>
         /// metodo del evento click de btnEliminarCliente se encargar de eliminar un cliente de la lista verificando
-        /// que la lista tenga clientes y que uno este seleccioado. Si surge algun error capturara una excepcion de
+        /// que la lista tenga clientes y que uno este seleccioado. En caso de ser un cliente de la base de datos eliminara sus servicios y el cliente.
+        /// Si surge algun error capturara una excepcion de
         /// tipo ClienteNoSeleccionadoException
         /// </summary>
         /// <param name="sender"></param>
@@ -170,7 +163,8 @@ namespace SistemaAtencionAlPublico
         /// <summary>
         /// metodo del evento click del boton btnModificarCliente, se encargar de llevar todos los datos 
         /// del cliente seleccionado al nuevo formulario y renovara estos datos del cliente en la lista del 
-        /// frmAbmCliente, tambien verificara que la lista tenga clientes y que uno sea seleccionado
+        /// frmAbmCliente, tambien verificara que la lista tenga clientes y que uno sea seleccionado. Se le pasara como 
+        /// argumento al form si el cliente es cargado desde la base de datos  o es cargado desde un archivo
         /// si surge algun error capturara una excepcion de tipo ClienteNoSeleccionadoException
         /// 
         /// </summary>
@@ -448,6 +442,24 @@ namespace SistemaAtencionAlPublico
 
             
 
+        }
+
+
+        /// <summary>
+        /// evento de cierre de formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmAdministracionClientes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult resultado = MessageBox.Show("¿Está seguro que quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

@@ -29,7 +29,8 @@ namespace SistemaAtencionAlPublico
         }
 
         /// <summary>
-        /// metodo encargado de actualizar los elementos de el listbox 
+        /// metodo encargado de actualizar los elementos de el listbox, verificara si el cliente
+        /// seleccionado proviene desde una base de datos o si proviene de un archivo, y le asignara la lista a el listbox
         /// </summary>
         private void ActualizarLista()
         {
@@ -37,7 +38,6 @@ namespace SistemaAtencionAlPublico
             {
                 if(cargadoDesdeUnaBaseDeDatos == false)
                 {
-                    this.listaServicios = cliente.ListaServiciosCliente;
                     this.listaServicios = cliente.ListaServiciosCliente;
 
                 }

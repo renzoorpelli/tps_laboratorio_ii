@@ -61,6 +61,27 @@ namespace SistemaAtencionAlPublico
         }
 
         /// <summary>
+        /// metodo encargado de controlar el estado de la barra, esta tarea al estar siendo ejecutada en un hilo secundario
+        /// se llamara a la propiedad InvokeRequired par que pueda ser ejecutada desde otro hilo y despues si la barra se 
+        /// cargo correctamente llamara al metodo close que cancelara el hilo
+        /// </summary>
+        private void FinCargaBarra()
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(barraCargada);
+            }
+            else
+            {
+                if (progressBar1.Value == 100)
+                {
+                    this.Close();
+                }
+            }
+
+        }
+
+        /// <summary>
         /// metodo encargado de simular el estado de porcentaje completado de la progressbar
         /// sera el encargado de llaamar a los eventos cargarBarra y barra cargada
         /// </summary>
@@ -82,26 +103,7 @@ namespace SistemaAtencionAlPublico
             }
             
         }
-        /// <summary>
-        /// metodo encargado de controlar el estado de la barra, esta tarea al estar siendo ejecutada en un hilo secundario
-        /// se llamara a la propiedad InvokeRequired par que pueda ser ejecutada desde otro hilo y despues si la barra se 
-        /// cargo correctamente llamara al metodo close que cancelara el hilo
-        /// </summary>
-        private void FinCargaBarra()
-        {
-            if(this.InvokeRequired)
-            {
-                this.BeginInvoke(barraCargada);
-            }
-            else
-            {
-                if (progressBar1.Value == 100)
-                {
-                    this.Close();
-                }
-            }
-            
-        }
+        
 
         //metodo encargado de cancelar el hilo
         private void ProgressBarForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -16,6 +16,10 @@ namespace Entidades.GestorSQL
     {
         private static string cadenaConexion;
 
+
+        /// <summary>
+        /// constructor estatico encargado de instanciar la cadena de conexion a la base de datos
+        /// </summary>
         static ClienteDAO()
         {
             cadenaConexion = "Server=.;Database=CLIENTES_DB;Trusted_Connection=True;";
@@ -23,7 +27,7 @@ namespace Entidades.GestorSQL
 
 
         /// <summary>
-        /// Funcion encargada de Leer la lista de Clientes de la base de datos.
+        /// metodo encargada de Leer la lista de Clientes de la base de datos.
         /// </summary>
         /// <returns>retornara una lista de clientes, caso contrario lanzara una excepcion de tipo ConexionSQLException </returns>
         /// <exception cref="ConexionSQLException"></exception>
@@ -41,11 +45,11 @@ namespace Entidades.GestorSQL
                     SqlDataReader reader = cmd.ExecuteReader();
                     while(reader.Read())
                     {
-                        Cliente.categoriaCliente categoriaCliente = (Cliente.categoriaCliente)reader.GetInt32(3);//obtengo la categoria
-                        string nombreCliente = reader.GetString(1);//obtengo el nombre
-                        string domicilioCliente = reader.GetString(4);//obtengo domicilio
+                        Cliente.categoriaCliente categoriaCliente = (Cliente.categoriaCliente)reader.GetInt32(3);
+                        string nombreCliente = reader.GetString(1);
+                        string domicilioCliente = reader.GetString(4);
                         string cuitOCuil = reader.GetString(2);
-                        int tipoCliente = reader.GetInt32(0);// obtengo si es de tipo Empresa o Particular
+                        int tipoCliente = reader.GetInt32(0);
                         if(tipoCliente == 1)
                         {
                             Cliente cliente = new ClienteEmpresa(categoriaCliente, nombreCliente, cuitOCuil, domicilioCliente);
@@ -65,6 +69,11 @@ namespace Entidades.GestorSQL
             return listaClientes;
         }
 
+        /// <summary>
+        /// metodo encargado de dar de agregar un cliente a la base de datos
+        /// </summary>
+        /// <param name="cliente">el cliente que se quiere agregar</param>
+        /// <exception cref="ErrorAltaSQLException"></exception>
         public static void Alta(Cliente cliente)
         {
             string query = "INSERT INTO clientes(tipo_cliente, nombre_completo, cuit_cuil, categoria_cliente, domicilio_cliente) values(@tipoCliente,@nombreCompleto, @cuitOCuil,@categoriaCliente,@domicilioCliente)";
@@ -91,7 +100,7 @@ namespace Entidades.GestorSQL
             }
             catch (Exception ex)
             {
-                throw new ConexionSQLException("Error al dar de alta un cliente a la base de datos", ex);
+                throw new ErrorAltaSQLException("Error al dar de alta un cliente a la base de datos", ex);
             }
             finally
             {
@@ -101,7 +110,11 @@ namespace Entidades.GestorSQL
                 }
             }
         }
-
+        /// <summary>
+        /// metodo encargado de borrar un cliente de la base de datos
+        /// </summary>
+        /// <param name="cuitOCuil">el identificador de cliente para la query</param>
+        /// <exception cref="ErrorBorrarSQLException"></exception>
         public static void Borrar(string cuitOCuil)
         {
             try
@@ -119,11 +132,16 @@ namespace Entidades.GestorSQL
             }
             catch (Exception ex)
             {
-                throw new ConexionSQLException("Error al dar de baja un cliente a la base de datos", ex);
+                throw new ErrorBorrarSQLException("Error al dar de baja un cliente a la base de datos", ex);
             }
         }
 
-
+        /// <summary>
+        /// metodo encargado de modificar algunos datos del cliente de la base de datos, caso contrario
+        /// lanzara una excepcion de tipo ErrorModificarSQLException
+        /// </summary>
+        /// <param name="cliente">recibe el cliente a modificar</param>
+        /// <exception cref="ErrorModificarSQLException"></exception>
         public static void Modificar(Cliente cliente)
         {
             try
@@ -144,7 +162,7 @@ namespace Entidades.GestorSQL
             }
             catch (Exception ex)
             {
-                throw new ConexionSQLException("Error al modificar un cliente en la base de datos", ex);
+                throw new ErrorModificarSQLException("Error al modificar un cliente en la base de datos", ex);
             }
         }
 

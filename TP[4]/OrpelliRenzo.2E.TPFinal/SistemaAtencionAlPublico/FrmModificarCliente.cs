@@ -38,7 +38,14 @@ namespace SistemaAtencionAlPublico
         {
             this.Close();
         }
-
+        /// <summary>
+        /// metodo del evento click del botn btnGuardaCliente encargado de modificar un cliente
+        /// capturara las posibles excepciones que se podrian generar si un dato es invalido
+        /// NombreInvalidoException
+        /// CamposVaciosException
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             try

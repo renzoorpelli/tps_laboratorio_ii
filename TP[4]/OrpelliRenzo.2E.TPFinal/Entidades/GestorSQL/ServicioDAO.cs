@@ -12,13 +12,21 @@ namespace Entidades.GestorSQL
     public class ServicioDAO
     {
         private static string cadenaConexion;
-
+        
+        /// <summary>
+        /// constructor estatico encargado de instanciar la cadena de conexion a la base de datos
+        /// </summary>
         static ServicioDAO()
         {
             cadenaConexion = "Server=.;Database=CLIENTES_DB;Trusted_Connection=True;";
         }
 
-
+        /// <summary>
+        /// metodo encargado de traeer la lista de servicios que tiene un cliente
+        /// </summary>
+        /// <param name="cliente">el cliente del cual se quiere extraer la lista de servicios</param>
+        /// <returns>retorna la lista de servicios de ese cliente, sino lanzara una excepcion del tipo ConexionSQLException</returns>
+        /// <exception cref="ConexionSQLException">r</exception>
         public static List<Servicio> LeerServicios(Cliente cliente)
         {
             List<Servicio> listaServicios = new List<Servicio>();
@@ -49,6 +57,11 @@ namespace Entidades.GestorSQL
             return listaServicios;
         }
 
+        /// <summary>
+        /// metodo encargado de eliminar un servicio del cliente seleccionado, caso contrario lanzara una excepcion de tipo 
+        /// ErrorBorrarSQLException
+        /// </summary>
+        /// <param name="cliente">el cliente el cual se le usara el cuit/cuil como identificador para borrarlo</param>
         public static void Borrar(Cliente cliente)
         {
             try
@@ -66,9 +79,16 @@ namespace Entidades.GestorSQL
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new ErrorBorrarSQLException("Error al tratar de borrar un registro de la base de datos", ex);
             }
         }
+
+        /// <summary>
+        /// metodo encargado de agregar un servicio a la base de datos, caso contrario lanzara una exepcion de tipo
+        /// ErrorAltaSQLException
+        /// </summary>
+        /// <param name="servicio">el servicio que dara de alta a la base de datos</param>
+        /// <exception cref="ConexionSQLException"></exception>
         public static void Alta(Servicio servicio)
         {
             string query = "INSERT INTO servicios(costo_servicio, dificultad_servicio, tipo_infeccion, fecha_analisis, idCuitOCuil_cliente) values(@costoServicio,@dificultadServicio, @tipoInfeccion,@fechaAnalisis,@idCuitOCuil)";
@@ -88,7 +108,7 @@ namespace Entidades.GestorSQL
             }
             catch (Exception ex)
             {
-                throw new ConexionSQLException("Error al dar de alta un servicio a la base de datos", ex);
+                throw new ErrorAltaSQLException("Error al dar de alta un servicio a la base de datos", ex);
             }
             finally
             {
