@@ -18,12 +18,14 @@ namespace SistemaAtencionAlPublico
         Cliente cliente;
         List<Servicio> listaServicios;
         AdministracionEmpresa administracion;
-        public FormServicios(Cliente cliente, List<Servicio> listaServicios, AdministracionEmpresa administracion)
+        bool cargadoDesdeUnaBaseDeDatos;
+        public FormServicios(Cliente cliente, List<Servicio> listaServicios, AdministracionEmpresa administracion, bool isFromDataBase)
         {
             InitializeComponent();
             this.cliente = cliente;
             this.listaServicios = listaServicios;
             this.administracion = administracion;
+            this.cargadoDesdeUnaBaseDeDatos = isFromDataBase;
         }
 
         /// <summary>
@@ -33,13 +35,28 @@ namespace SistemaAtencionAlPublico
         {
             try
             {
-                this.listaServicios = ServicioDAO.LeerServicios(cliente);
+                if(cargadoDesdeUnaBaseDeDatos == false)
+                {
+                    this.listaServicios = cliente.ListaServiciosCliente;
+                    this.listaServicios = cliente.ListaServiciosCliente;
+
+                }
+                else
+                {
+                    this.listaServicios = ServicioDAO.LeerServicios(cliente);
+                }
                 this.lstbServicios.DataSource = null;
                 this.lstbServicios.DataSource = listaServicios;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                
+                this.lstbServicios.DataSource = null;
+                this.lstbServicios.DataSource = listaServicios;
             }
            
         }

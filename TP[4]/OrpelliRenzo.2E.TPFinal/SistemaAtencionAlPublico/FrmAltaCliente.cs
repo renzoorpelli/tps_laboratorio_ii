@@ -18,8 +18,8 @@ namespace SistemaAtencionAlPublico
         private AdministracionEmpresa administracion;
         private CancellationToken cancellationToken;
         CancellationTokenSource cancellation;
-        Action eventoActualizarLista;
-        public FrmAltaCliente(AdministracionEmpresa administracion, CancellationToken cancellationToken, CancellationTokenSource cancellation, Action eventoActualizar)
+        ActualizarListaCliente eventoActualizarLista;
+        public FrmAltaCliente(AdministracionEmpresa administracion, CancellationToken cancellationToken, CancellationTokenSource cancellation, ActualizarListaCliente eventoActualizar)
         {
             InitializeComponent();
             

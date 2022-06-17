@@ -1,70 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCliente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Cliente xsi:type="ClienteParticular">
-    <CuitOCuil>20420453397</CuitOCuil>
-    <NombreCliente>Renzo Orpelli</NombreCliente>
-    <DomicilioCliente>oliden 321</DomicilioCliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <CuitOCuil>30454564569</CuitOCuil>
+    <NombreCliente>AMDRyzen</NombreCliente>
+    <DomicilioCliente>sarasa 123</DomicilioCliente>
     <CategoriaDelCliente>Premium</CategoriaDelCliente>
-    <ListaServiciosCliente>
-      <Servicio>
-        <costoServicio>1800</costoServicio>
-        <dificultadServicio>Facil</dificultadServicio>
-        <tipoInfeccion>Malware</tipoInfeccion>
-        <CostoServicio>1800</CostoServicio>
-        <FechaAnalisis>2022-06-10T13:48:14.4526124-03:00</FechaAnalisis>
-      </Servicio>
-    </ListaServiciosCliente>
+    <ListaServiciosCliente />
   </Cliente>
   <Cliente xsi:type="ClienteEmpresa">
-    <CuitOCuil>30330405568</CuitOCuil>
-    <NombreCliente> Andreani</NombreCliente>
+    <CuitOCuil>30225567781</CuitOCuil>
+    <NombreCliente>Andreani</NombreCliente>
     <DomicilioCliente>guemes 123</DomicilioCliente>
-    <CategoriaDelCliente>Premium</CategoriaDelCliente>
-    <ListaServiciosCliente>
-      <Servicio>
-        <costoServicio>1800</costoServicio>
-        <dificultadServicio>Facil</dificultadServicio>
-        <tipoInfeccion>Troyano</tipoInfeccion>
-        <CostoServicio>1800</CostoServicio>
-        <FechaAnalisis>2022-06-10T13:48:14.4526124-03:00</FechaAnalisis>
-      </Servicio>
-      <Servicio>
-        <costoServicio>18000</costoServicio>
-        <dificultadServicio>Facil</dificultadServicio>
-        <tipoInfeccion>Adware</tipoInfeccion>
-        <CostoServicio>18000</CostoServicio>
-        <FechaAnalisis>2022-06-10T13:48:14.4526124-03:00</FechaAnalisis>
-      </Servicio>
-    </ListaServiciosCliente>
-  </Cliente>
-  <Cliente xsi:type="ClienteParticular">
-    <CuitOCuil>20233567899</CuitOCuil>
-    <NombreCliente>Joaquin Lopez</NombreCliente>
-    <DomicilioCliente>florida 346</DomicilioCliente>
     <CategoriaDelCliente>Classic</CategoriaDelCliente>
     <ListaServiciosCliente>
       <Servicio>
-        <costoServicio>20000</costoServicio>
-        <dificultadServicio>Dificil</dificultadServicio>
-        <tipoInfeccion>Malware</tipoInfeccion>
+        <CostoServicio>2000</CostoServicio>
+        <FechaAnalisis>2020-03-21T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>30225567781</CuilOCuitCliente>
+      </Servicio>
+      <Servicio>
         <CostoServicio>20000</CostoServicio>
-        <FechaAnalisis>2022-06-10T13:48:14.4526124-03:00</FechaAnalisis>
+        <FechaAnalisis>2022-06-11T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>30225567781</CuilOCuitCliente>
       </Servicio>
     </ListaServiciosCliente>
   </Cliente>
   <Cliente xsi:type="ClienteEmpresa">
-    <CuitOCuil>30556789896</CuitOCuil>
+    <CuitOCuil>30330330330</CuitOCuil>
+    <NombreCliente>Corsair</NombreCliente>
+    <DomicilioCliente>chile 1333</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20667778889</CuitOCuil>
+    <NombreCliente>Franco Messina</NombreCliente>
+    <DomicilioCliente>belgrano 456</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+  </Cliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <CuitOCuil>30123445679</CuitOCuil>
+    <NombreCliente>Gigabyte</NombreCliente>
+    <DomicilioCliente>cochabamba 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20223309999</CuitOCuil>
+    <NombreCliente>Hector Martinez</NombreCliente>
+    <DomicilioCliente>curtoni 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20667789909</CuitOCuil>
+    <NombreCliente>Juan Pedro</NombreCliente>
+    <DomicilioCliente>lisboa 192</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+  </Cliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <CuitOCuil>30660713339</CuitOCuil>
+    <NombreCliente>Logitech</NombreCliente>
+    <DomicilioCliente>lauria 2300</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <CostoServicio>18000</CostoServicio>
+        <FechaAnalisis>2022-06-11T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>30660713339</CuilOCuitCliente>
+      </Servicio>
+    </ListaServiciosCliente>
+  </Cliente>
+  <Cliente xsi:type="ClienteEmpresa">
+    <CuitOCuil>30215246672</CuitOCuil>
     <NombreCliente>Ocasa</NombreCliente>
-    <DomicilioCliente>mitre 230</DomicilioCliente>
+    <DomicilioCliente>guemes 123</DomicilioCliente>
     <CategoriaDelCliente>Classic</CategoriaDelCliente>
     <ListaServiciosCliente>
       <Servicio>
-        <costoServicio>15000</costoServicio>
-        <dificultadServicio>Medio</dificultadServicio>
-        <tipoInfeccion>Gusano</tipoInfeccion>
-        <CostoServicio>15000</CostoServicio>
-        <FechaAnalisis>2022-06-10T13:48:14.4526124-03:00</FechaAnalisis>
+        <CostoServicio>20000</CostoServicio>
+        <FechaAnalisis>2022-06-11T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>30215246672</CuilOCuitCliente>
       </Servicio>
     </ListaServiciosCliente>
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20903332229</CuitOCuil>
+    <NombreCliente>Pedro Balboa</NombreCliente>
+    <DomicilioCliente>avellaneda 344</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20384473569</CuitOCuil>
+    <NombreCliente>Renzo Orpelli</NombreCliente>
+    <DomicilioCliente>ditella 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <CostoServicio>18000</CostoServicio>
+        <FechaAnalisis>2022-06-11T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>20384473569</CuilOCuitCliente>
+      </Servicio>
+    </ListaServiciosCliente>
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20274762569</CuitOCuil>
+    <NombreCliente>Roberto Lopez</NombreCliente>
+    <DomicilioCliente>tuyu 3240</DomicilioCliente>
+    <CategoriaDelCliente>Classic</CategoriaDelCliente>
+    <ListaServiciosCliente>
+      <Servicio>
+        <CostoServicio>2000</CostoServicio>
+        <FechaAnalisis>2022-06-11T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>20274762569</CuilOCuitCliente>
+      </Servicio>
+      <Servicio>
+        <CostoServicio>20000</CostoServicio>
+        <FechaAnalisis>2022-06-11T00:00:00</FechaAnalisis>
+        <CuilOCuitCliente>20274762569</CuilOCuitCliente>
+      </Servicio>
+    </ListaServiciosCliente>
+  </Cliente>
+  <Cliente xsi:type="ClienteParticular">
+    <CuitOCuil>20203334449</CuitOCuil>
+    <NombreCliente>Tomas Perez</NombreCliente>
+    <DomicilioCliente>lalala 123</DomicilioCliente>
+    <CategoriaDelCliente>Premium</CategoriaDelCliente>
+    <ListaServiciosCliente />
   </Cliente>
 </ArrayOfCliente>

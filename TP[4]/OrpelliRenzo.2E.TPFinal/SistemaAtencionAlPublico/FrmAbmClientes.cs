@@ -16,22 +16,25 @@ using Entidades.GestorSQL;
 
 namespace SistemaAtencionAlPublico
 {
+    //delegado encargado de recibir un formulario y referenciar al metodo InicarAltaCliente
+    public delegate void AbrirFormulario (Form form);
 
+    public delegate void ActualizarListaCliente();
     public partial class FrmAdministracionClientes : Form
     {
         private AdministracionEmpresa administracion;
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
+        private bool cargadoDesdeBaseDeDatos;
 
-       // public event Action<Form> iniciarFormAlta;
 
-        public event Action ActualizarLista;
+        public event ActualizarListaCliente ActualizarLista;
         public FrmAdministracionClientes()
         {
             InitializeComponent();
             this.cmbTipoInfeccion.DataSource = Enum.GetValues(typeof(Servicio.tipoVirus));
             this.cmbDificultadVirus.DataSource = Enum.GetValues(typeof(Servicio.dificultadVirus));
-            this.administracion = new AdministracionEmpresa(50);//50 CLIENTES MAXIMO
+            this.administracion = new AdministracionEmpresa(300);
             if (lstClientes.Items.Count == 0)
             {
                 this.groupBoxServicios.Enabled = false;
@@ -70,32 +73,27 @@ namespace SistemaAtencionAlPublico
         {
             try
             {
-                FrmAltaCliente altaCliente = new FrmAltaCliente(administracion, cancellationToken, cancellationTokenSource, ActualizarLista);             
-                Task.Run(() => IniciarAltaClientes(altaCliente), cancellationToken);              
-                //this.ActualizarListaClientes();
+                FrmAltaCliente altaCliente = new FrmAltaCliente(administracion, cancellationToken, cancellationTokenSource, ActualizarLista);
+                Task.Run(() => IniciarAltaClientes(altaCliente), cancellationToken);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
+
         }
 
         private void IniciarAltaClientes(Form altaCliente)
         {
-            if(this.InvokeRequired)
+            if (this.InvokeRequired)
             {
-                Action<Form> openForm = IniciarAltaClientes;
+                AbrirFormulario form = IniciarAltaClientes;
                 object[] args = { altaCliente };
-                this.BeginInvoke(openForm, args);
+                this.BeginInvoke(form, args);
             }
             else
             {
                 altaCliente.Show();
-                //if (ActualizarLista is not null)
-                //{
-                //    ActualizarLista.Invoke();
-                //}
             }
 
         }
@@ -110,7 +108,6 @@ namespace SistemaAtencionAlPublico
             try
             {
                 Comparison<Cliente> comparador = (Cliente c1, Cliente c2) => c1.NombreCliente.CompareTo(c2.NombreCliente);
-                this.administracion.ListaClientes = ClienteDAO.LeerDatos();
                 this.administracion.ListaClientes.Sort(comparador);
                 this.lstClientes.DataSource = null;
                 this.lstClientes.DataSource = administracion.ListaClientes;
@@ -147,8 +144,12 @@ namespace SistemaAtencionAlPublico
                         if (resultado == DialogResult.Yes)
                         {
                             MessageBox.Show(this.administracion - clienteSeleccionado, "Cliente Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            ServicioDAO.Borrar(clienteSeleccionado);
-                            ClienteDAO.Borrar(clienteSeleccionado.CuitOCuil);
+                            if(cargadoDesdeBaseDeDatos == true)
+                            {
+                                ServicioDAO.Borrar(clienteSeleccionado);
+                                ClienteDAO.Borrar(clienteSeleccionado.CuitOCuil);
+                            }
+                           
                         }
                     }
 
@@ -185,7 +186,7 @@ namespace SistemaAtencionAlPublico
                     Cliente? clienteSeleccionado = this.lstClientes.SelectedItem as Cliente;
                     if (clienteSeleccionado is not null)
                     {
-                        modificarCliente = new FrmModificarCliente(clienteSeleccionado, administracion);
+                        modificarCliente = new FrmModificarCliente(clienteSeleccionado, administracion, cargadoDesdeBaseDeDatos);
                         modificarCliente.ShowDialog();
                     }
 
@@ -204,7 +205,7 @@ namespace SistemaAtencionAlPublico
 
 
         #region validaciones
-        
+
         /// <summary>
         /// controla que el valor del servicio ingresado sea de tipo numerico
         /// </summary>
@@ -278,7 +279,10 @@ namespace SistemaAtencionAlPublico
                             if (clienteSeleccionado + servicio)
                             {
                                 MessageBox.Show("Servicio Agregado Correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ServicioDAO.Alta(servicio);
+                                if(cargadoDesdeBaseDeDatos == true)//todo analizar si se puede mejorar
+                                {
+                                    ServicioDAO.Alta(servicio);
+                                }
                             }
                         }
                     }
@@ -318,7 +322,7 @@ namespace SistemaAtencionAlPublico
                     Cliente? clienteSeleccionado = this.lstClientes.SelectedItem as Cliente;
                     if (clienteSeleccionado is not null)
                     {
-                        FormServicios frmServicios = new FormServicios(clienteSeleccionado, clienteSeleccionado.ListaServiciosCliente, administracion);
+                        FormServicios frmServicios = new FormServicios(clienteSeleccionado, clienteSeleccionado.ListaServiciosCliente, administracion, cargadoDesdeBaseDeDatos);
                         frmServicios.ShowDialog();
                     }
                 }
@@ -327,11 +331,11 @@ namespace SistemaAtencionAlPublico
             {
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
         }
         /// <summary>
         /// metodo del evento click del  boton btnGuardarClientes encargado de serializar la lista de clientes con sus respectivos servicios en caso de tenerlos
@@ -344,15 +348,29 @@ namespace SistemaAtencionAlPublico
         /// <param name="e"></param>
         private void btnGuardarClientes_Click(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
+            Serializador<List<Cliente>> serializador = new Serializador<List<Cliente>>(GestorDeArchivo.ETipo.ClienteXML);
             try
             {
-                if(HayClientes())
+                if (HayClientes())
                 {
-                    Serializador<List<Cliente>> serializador = new Serializador<List<Cliente>>(GestorDeArchivo.ETipo.ClienteXML);
-                    string mensaje = serializador.Escribir("listaClientes.xml", administracion.ListaClientes);
+                    if(cargadoDesdeBaseDeDatos == false)
+                    {
+                        
+                        mensaje = serializador.Escribir("listaClientes.xml", administracion.ListaClientes);
+                    }
+                    else
+                    {
+                        foreach(Cliente cliente in administracion.ListaClientes)
+                        {
+                            cliente.ListaServiciosCliente = ServicioDAO.LeerServicios(cliente);
+                        }
+                        mensaje = serializador.Escribir("listaClientes.xml", administracion.ListaClientes);
+                    }
+                   
                     MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
+
             }
             catch (ClienteNoSeleccionadoException ex)
             {
@@ -362,11 +380,14 @@ namespace SistemaAtencionAlPublico
             {
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
+
         /// <summary>
         /// metodo del evento click del boton btnCargarClientes encargado de cargar la lista de clientes del archivo xml, si el archivo es null
         /// capturara una excepcion de tipo ArchivoNullException y mostrara el error por pantalla, caso contrario mostrar un mensaje de 
@@ -378,7 +399,11 @@ namespace SistemaAtencionAlPublico
         {
             try
             {
+                this.cargadoDesdeBaseDeDatos = false;
+                ProgressBarForm form = new ProgressBarForm();
+                form.ShowDialog();
                 Serializador<List<Cliente>> serializador = new Serializador<List<Cliente>>(GestorDeArchivo.ETipo.ClienteXML);
+                this.administracion.ListaClientes.Clear();
                 this.administracion.ListaClientes = serializador.Leer("listaClientes.xml");
                 this.ActualizarListaClientes();
                 MessageBox.Show("Lista cargada Exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -402,10 +427,26 @@ namespace SistemaAtencionAlPublico
             this.Close();
         }
 
+        //TODO borraste la lista actual
         private void btnCargarDesdeSQL_Click(object sender, EventArgs e)
         {
-            this.ActualizarListaClientes();
-            MessageBox.Show("Lista cargada desde base de datos exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            try
+            {
+                this.cargadoDesdeBaseDeDatos = true;
+                ProgressBarForm form = new ProgressBarForm();
+                form.ShowDialog();
+                this.administracion.ListaClientes.Clear();
+                this.administracion.ListaClientes = ClienteDAO.LeerDatos();            
+                this.ActualizarListaClientes();
+                MessageBox.Show("Lista cargada desde base de datos exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            
 
         }
     }

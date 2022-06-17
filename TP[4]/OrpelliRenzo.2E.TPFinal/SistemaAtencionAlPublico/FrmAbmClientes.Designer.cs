@@ -50,20 +50,21 @@
             this.buttonMostrarServicios = new System.Windows.Forms.Button();
             this.btnAltaServicios = new System.Windows.Forms.Button();
             this.groupBoxAdministrarDatos = new System.Windows.Forms.GroupBox();
+            this.btnCargarDesdeSQL = new System.Windows.Forms.Button();
             this.btnCargarClientes = new System.Windows.Forms.Button();
             this.btnGuardarClientes = new System.Windows.Forms.Button();
-            this.btnCargarDesdeSQL = new System.Windows.Forms.Button();
             this.groupBoxServicios.SuspendLayout();
             this.groupBoxAdministrarDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstClientes
             // 
+            this.lstClientes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstClientes.FormattingEnabled = true;
-            this.lstClientes.ItemHeight = 15;
+            this.lstClientes.ItemHeight = 17;
             this.lstClientes.Location = new System.Drawing.Point(12, 121);
             this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(493, 499);
+            this.lstClientes.Size = new System.Drawing.Size(493, 497);
             this.lstClientes.TabIndex = 0;
             // 
             // lblListadoEmpleados
@@ -302,15 +303,27 @@
             this.groupBoxAdministrarDatos.TabStop = false;
             this.groupBoxAdministrarDatos.Text = "Datos";
             // 
+            // btnCargarDesdeSQL
+            // 
+            this.btnCargarDesdeSQL.BackColor = System.Drawing.Color.Plum;
+            this.btnCargarDesdeSQL.Font = new System.Drawing.Font("Noto Mono", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCargarDesdeSQL.Location = new System.Drawing.Point(19, 21);
+            this.btnCargarDesdeSQL.Name = "btnCargarDesdeSQL";
+            this.btnCargarDesdeSQL.Size = new System.Drawing.Size(126, 62);
+            this.btnCargarDesdeSQL.TabIndex = 19;
+            this.btnCargarDesdeSQL.Text = "Cargar Clientes desde SQL";
+            this.btnCargarDesdeSQL.UseVisualStyleBackColor = false;
+            this.btnCargarDesdeSQL.Click += new System.EventHandler(this.btnCargarDesdeSQL_Click);
+            // 
             // btnCargarClientes
             // 
             this.btnCargarClientes.BackColor = System.Drawing.Color.Plum;
             this.btnCargarClientes.Font = new System.Drawing.Font("Noto Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarClientes.Location = new System.Drawing.Point(184, 21);
+            this.btnCargarClientes.Location = new System.Drawing.Point(165, 21);
             this.btnCargarClientes.Name = "btnCargarClientes";
-            this.btnCargarClientes.Size = new System.Drawing.Size(115, 62);
+            this.btnCargarClientes.Size = new System.Drawing.Size(129, 62);
             this.btnCargarClientes.TabIndex = 18;
-            this.btnCargarClientes.Text = "Cargar Clientes";
+            this.btnCargarClientes.Text = "Cargar Clientes desde Archivo";
             this.btnCargarClientes.UseVisualStyleBackColor = false;
             this.btnCargarClientes.Click += new System.EventHandler(this.btnCargarClientes_Click);
             // 
@@ -318,25 +331,13 @@
             // 
             this.btnGuardarClientes.BackColor = System.Drawing.Color.PaleGreen;
             this.btnGuardarClientes.Font = new System.Drawing.Font("Noto Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarClientes.Location = new System.Drawing.Point(16, 21);
+            this.btnGuardarClientes.Location = new System.Drawing.Point(65, 89);
             this.btnGuardarClientes.Name = "btnGuardarClientes";
-            this.btnGuardarClientes.Size = new System.Drawing.Size(115, 62);
+            this.btnGuardarClientes.Size = new System.Drawing.Size(172, 62);
             this.btnGuardarClientes.TabIndex = 17;
             this.btnGuardarClientes.Text = "Guardar Clientes";
             this.btnGuardarClientes.UseVisualStyleBackColor = false;
             this.btnGuardarClientes.Click += new System.EventHandler(this.btnGuardarClientes_Click);
-            // 
-            // btnCargarDesdeSQL
-            // 
-            this.btnCargarDesdeSQL.BackColor = System.Drawing.Color.Plum;
-            this.btnCargarDesdeSQL.Font = new System.Drawing.Font("Noto Mono", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarDesdeSQL.Location = new System.Drawing.Point(81, 101);
-            this.btnCargarDesdeSQL.Name = "btnCargarDesdeSQL";
-            this.btnCargarDesdeSQL.Size = new System.Drawing.Size(143, 56);
-            this.btnCargarDesdeSQL.TabIndex = 19;
-            this.btnCargarDesdeSQL.Text = "Cargar Clientes desde SQL";
-            this.btnCargarDesdeSQL.UseVisualStyleBackColor = false;
-            this.btnCargarDesdeSQL.Click += new System.EventHandler(this.btnCargarDesdeSQL_Click);
             // 
             // FrmAdministracionClientes
             // 

@@ -57,7 +57,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{this.GetType().Name}           { base.NombreCliente}                        {this.CategoriaDelCliente}";   
+            return $"{this.GetType().Name} - { base.NombreCliente} - {this.CategoriaDelCliente}";   
         }
 
         /// <summary>

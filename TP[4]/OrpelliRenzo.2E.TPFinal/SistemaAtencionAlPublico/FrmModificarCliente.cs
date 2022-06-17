@@ -17,19 +17,21 @@ namespace SistemaAtencionAlPublico
     {
         Cliente cliente;
         AdministracionEmpresa administracion;
+        bool isFromDataBase;
         public FrmModificarCliente()
         {
             InitializeComponent();
         }
 
 
-        public FrmModificarCliente(Cliente cliente, AdministracionEmpresa administracion) : this()
+        public FrmModificarCliente(Cliente cliente, AdministracionEmpresa administracion, bool isFromDataBase) : this()
         {
 
             this.cmbCategoriaCliente.DataSource = Enum.GetValues(typeof(Cliente.categoriaCliente));
             this.cmbTipoCliente.DataSource = new List<string> { "Cliente Particular", "Empresa" };
             this.cliente = cliente;
             this.administracion = administracion;
+            this.isFromDataBase = isFromDataBase;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -46,7 +48,10 @@ namespace SistemaAtencionAlPublico
                     this.cliente.NombreCliente = this.txtNombre.Text;
                     cliente.CategoriaDelCliente = (Cliente.categoriaCliente)this.cmbCategoriaCliente.SelectedItem;
                     cliente.DomicilioCliente = this.txtDomicilio.Text;
-                    ClienteDAO.Modificar(cliente);
+                    if(isFromDataBase == true)
+                    {
+                        ClienteDAO.Modificar(cliente);
+                    }
                     
                     this.Close();
                 }

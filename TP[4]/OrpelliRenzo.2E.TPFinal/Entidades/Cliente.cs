@@ -80,6 +80,7 @@ namespace Entidades
         public List<Servicio> ListaServiciosCliente
         {
             get { return this.listaServiciosCliente; }
+            set { listaServiciosCliente = value; }
         }
 
 

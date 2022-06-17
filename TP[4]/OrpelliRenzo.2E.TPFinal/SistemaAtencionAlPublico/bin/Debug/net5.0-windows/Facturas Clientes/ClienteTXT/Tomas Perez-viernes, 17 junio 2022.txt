@@ -1,0 +1,8 @@
+Cliente :        ClienteParticular
+Nombre Cliente : Tomas Perez
+CUIL Persona :   20203334449
+Domicilio Cliente : lalala 123
+
+Serivicios Cliente : Tipo Virus: Malware -  Dificultad Servicio: Dificil - Costo Servicio: 2700 - Fecha de Analisis: 17/06/2022 11:18:44 a. m.
+Total A Pagar $2700
+

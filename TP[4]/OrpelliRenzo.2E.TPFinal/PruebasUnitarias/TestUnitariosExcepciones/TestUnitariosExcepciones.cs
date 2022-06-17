@@ -5,7 +5,7 @@ using Entidades.GestorDeArchivos;
 namespace PruebasUnitarias
 {
     [TestClass]
-    public class TestUnitariosExcepciones
+    public class TestUnitariosMetodosExtension
     {
        [TestMethod]
        [ExpectedException(typeof(ArchivoNullException))]

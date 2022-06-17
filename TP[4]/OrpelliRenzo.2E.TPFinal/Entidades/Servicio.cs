@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entidades.MetodosExtension;
 namespace Entidades
 {
     public class Servicio
@@ -172,7 +172,7 @@ namespace Entidades
         {
             if (cliente.CategoriaDelCliente == Cliente.categoriaCliente.Premium)
             {
-                servicio.CostoServicio = servicio.CostoServicio - (servicio.CostoServicio * 0.1);
+                servicio.CostoServicio = servicio.CostoServicio - (servicio.CostoServicio.CalcularPorcentaje(10));
             }
             else
             {

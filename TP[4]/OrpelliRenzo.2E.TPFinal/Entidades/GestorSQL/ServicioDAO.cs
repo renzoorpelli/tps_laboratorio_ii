@@ -44,7 +44,7 @@ namespace Entidades.GestorSQL
             }
             catch (Exception ex)
             {
-                throw new ConexionSQLException("Error al leer datos de servicio desde la base de datos", ex);
+                throw new ConexionSQLException("Error al leer datos de servicio desde la base de datos, se intentara desde el archivo", ex);
             }
             return listaServicios;
         }
